@@ -134,7 +134,8 @@ request.onload = function () {
 
             circle.bindPopup(`Ship name: ${name}
                             <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
-                            <br>Ship type: ${shipTypeString}`);
+                            <br>Ship type: ${shipTypeString}
+                            <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}`);
         }
 
     } else {
