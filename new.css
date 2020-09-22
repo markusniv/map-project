@@ -579,7 +579,7 @@ input[type=radio]{
     
     }
     body{
-        background-image: url("mobilebackground.jpg");
+        background-image: url("images/mobilebackground.jpg");
     }
     #mapid{
         height: 40vh;
