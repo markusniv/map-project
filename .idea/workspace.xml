@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Changed XMLHttpRequest to Fetch, completely redesigned the code, removed a lot of repeat code">
-      <change beforePath="$PROJECT_DIR$/new.css" beforeDir="false" afterPath="$PROJECT_DIR$/new.css" afterDir="false" />
+    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Fixed CSS image location">
+      <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600766729528</updated>
       <workItem from="1600766730582" duration="2746000" />
-      <workItem from="1600775937438" duration="5058000" />
+      <workItem from="1600775937438" duration="5361000" />
     </task>
     <task id="LOCAL−00001" summary="Added coordinates on the ship popup">
       <created>1600767328715</created>
@@ -96,7 +96,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1600780931286</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="Fixed CSS image location">
+      <created>1600781064293</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1600781064293</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +124,8 @@
     <MESSAGE value="Reorganized image files to their own folder" />
     <MESSAGE value="Fixed error with image not showing" />
     <MESSAGE value="Changed XMLHttpRequest to Fetch, completely redesigned the code, removed a lot of repeat code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed XMLHttpRequest to Fetch, completely redesigned the code, removed a lot of repeat code" />
+    <MESSAGE value="Fixed CSS image location" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed CSS image location" />
   </component>
   <component name="WindowStateProjectService">
     <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600776013333">
@@ -130,11 +137,11 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600767147037" />
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600777123444" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1600780937724">
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1600781075530">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600768910333" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600780937724" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600781075530" />
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600766780793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

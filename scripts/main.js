@@ -60,6 +60,22 @@ mymap.addEventListener('click', e => {
     })
 });
 
+// HERE ARE ALL THE FUNCTIONS!
+//
+// 1. storeLocationData
+// 2. catchMetadata
+// 3. getShips
+// 4. searchForShip
+// 5. toggle
+// 6. showAll
+// 7. showExact
+// 8. showInBetween
+// 9. showBoth
+// 10. showOthers
+// 11. changeMode
+//
+//
+
 function storeLocationData(json) {
     for (let i = 0; i < json.features.length; i++) {
         // Storing the mmsi, latitude and longitude as a singular object and pushing it into the array
@@ -266,20 +282,6 @@ function toggle() {
     }
 }
 
-//Clearing all markers and filtering shiptypes between numbers.
-
-function showInBetween(type, type2, typeName, typeColor) {
-    ships.clearLayers();
-    showAllShips = false;
-    showExactShips = false;
-    showInBetweenShips = true;
-    showBothShips = false;
-    showOtherShips = false;
-    catchMetadata(type, type2, typeName, typeColor);
-}
-
-//Clearing markers and displaying ships with precise typenumbers.
-
 function showAll() {
     ships.clearLayers();
     showAllShips = true;
@@ -290,11 +292,25 @@ function showAll() {
     catchMetadata();
 }
 
+//Clearing markers and displaying ships with precise typenumbers.
+
 function showExact(type, type2, typeName, typeColor) {
     ships.clearLayers();
     showAllShips = false;
     showExactShips = true;
     showInBetweenShips = false;
+    showBothShips = false;
+    showOtherShips = false;
+    catchMetadata(type, type2, typeName, typeColor);
+}
+
+//Clearing all markers and filtering shiptypes between numbers.
+
+function showInBetween(type, type2, typeName, typeColor) {
+    ships.clearLayers();
+    showAllShips = false;
+    showExactShips = false;
+    showInBetweenShips = true;
     showBothShips = false;
     showOtherShips = false;
     catchMetadata(type, type2, typeName, typeColor);
