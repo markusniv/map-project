@@ -20,7 +20,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoibWFya3VuaXYiLCJhIjoiY2tmMmM5c3QxMTB0NjJ3bG54ZG5wcDdjaCJ9.wUUxpW1q8GIClp0KfCdltg'
+    accessToken: config.MAP_KEY
 }).addTo(mymap);
 
 const ships = new L.LayerGroup;
@@ -89,7 +89,7 @@ function storeLocationData(json) {
 }
 
 function getWeatherData(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=84d359deffe03ea7a7ebe3687be9f05a`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&${config.WEATHER_KEY}`)
         .then(function (answer) {
             return answer.json();
         }).then(function(json){

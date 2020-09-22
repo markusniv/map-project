@@ -5,7 +5,7 @@
       <paths name="Metropolia">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/web_ohjelmointi/map-project-final/" local="$PROJECT_DIR$" web="/web_ohjelmointi/map-project-final/" />
           </mappings>
         </serverdata>
       </paths>
