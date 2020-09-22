@@ -23,7 +23,7 @@
             <br>
         </div>
         <button class="button" id="toggle" onclick="toggle()">Show/hide color codes</button>
-        <button class="button" id="all" onclick="reset()">Show all</button>
+        <button class="button" id="all" onclick="showAll()">Show all</button>
         </div>
         <div id="second">      
             <input type="radio" id="shipName" name="searchType" value="shipName">
@@ -41,18 +41,18 @@
     </section>
     <section id="midsection">
         <div id="colors" class="visible">
-                <button id="vari1" class="color" onclick="showExact(30, 'fishing', 'blue')"><span>Fishing</span></button>
+                <button id="vari1" class="color" onclick="showExact(30, null, 'fishing', 'blue')"><span>Fishing</span></button>
                 <button id="vari2" class="color" onclick="showBoth(31, 32, 'towing', 'yellow')"><span>Towing</span></button>
-                <button id="vari3" class="color" onclick="showExact(35, 'military', 'green')"><span>Military</span></button>
-                <button id="vari4" class="color" onclick="showExact(36, 'sailing', 'white')"><span>Sailing</span></button>
-                <button id="vari5" class="color" onclick="showExact(37, 'pleasure craft', 'white')"><span>Pleasure craft</span></button>
+                <button id="vari3" class="color" onclick="showExact(35, null, 'military', 'green')"><span>Military</span></button>
+                <button id="vari4" class="color" onclick="showExact(36, null, 'sailing', 'white')"><span>Sailing</span></button>
+                <button id="vari5" class="color" onclick="showExact(37, null, 'pleasure craft', 'white')"><span>Pleasure craft</span></button>
                 <button id="vari6" class="color" onclick="showInBetween(40, 50, 'high speed craft', 'crimson')"><span>High speed craft</span></button>
-                <button id="vari7" class="color" onclick="showExact(50, 'pilot vessel', 'orange')"><span>Pilot vessel</span></button>
-                <button id="vari8" class="color" onclick="showExact(51, 'search and rescue', 'darkkhaki')"><span>Search and rescue</span></button>
-                <button id="vari9" class="color" onclick="showExact(52, 'tug', 'yellow')"><span>Tug</span></button>
-                <button id="vari10" class="color" onclick="showExact(53, 'port tender', 'magenta')"><span>Port tender</span></button>
-                <button id="vari11" class="color" onclick="showExact(54, 'Anti-pollution equipment', 'darkslategray')"><span>Anti-pollution equipment</span></button>
-                <button id="vari12" class="color" onclick="showExact(55, 'law enforcement', 'darkblue')"><span>Law enforcement</span></button>
+                <button id="vari7" class="color" onclick="showExact(50, null, 'pilot vessel', 'orange')"><span>Pilot vessel</span></button>
+                <button id="vari8" class="color" onclick="showExact(51, null, 'search and rescue', 'darkkhaki')"><span>Search and rescue</span></button>
+                <button id="vari9" class="color" onclick="showExact(52, null, 'tug', 'yellow')"><span>Tug</span></button>
+                <button id="vari10" class="color" onclick="showExact(53, null, 'port tender', 'magenta')"><span>Port tender</span></button>
+                <button id="vari11" class="color" onclick="showExact(54, null, 'Anti-pollution equipment', 'darkslategray')"><span>Anti-pollution equipment</span></button>
+                <button id="vari12" class="color" onclick="showExact(55, null, 'law enforcement', 'darkblue')"><span>Law enforcement</span></button>
                 <button id="vari13" class="color" onclick="showInBetween(60, 70, 'passenger', 'red')"><span>Passenger</span></button>
                 <button id="vari14" class="color" onclick="showInBetween(70, 80, 'cargo', 'brown')"><span>Cargo</span></button>
                 <button id="vari15" class="color" onclick="showInBetween(80, 90, 'tanker', 'black')"><span>Tanker</span></button>
@@ -63,6 +63,6 @@
         </div>
     </section>
     <div id="mobilelogo"><img src="images/mobileLogo.png" width="750px" height="150px"></div>
-    <script src="main.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

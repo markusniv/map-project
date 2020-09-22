@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:map-project-2" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Fixed error with image not showing" />
+    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Fixed error with image not showing">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -19,10 +48,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AJAX" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Thard\OneDrive - Metropolia Ammattikorkeakoulu Oy\Web-tekniikat\map-project-2\scripts" />
       <recent name="C:\Users\Thard\OneDrive - Metropolia Ammattikorkeakoulu Oy\Web-tekniikat\map-project-2\images" />
     </key>
   </component>
@@ -34,7 +65,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600766729528</updated>
-      <workItem from="1600766730582" duration="2033000" />
+      <workItem from="1600766730582" duration="2746000" />
+      <workItem from="1600775937438" duration="4830000" />
     </task>
     <task id="LOCAL−00001" summary="Added coordinates on the ship popup">
       <created>1600767328715</created>
@@ -54,11 +86,28 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1600768732277</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Fixed error with image not showing">
+      <created>1600768901973</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1600768901973</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added coordinates on the ship popup" />
@@ -67,14 +116,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed error with image not showing" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1600767147037">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600776013333">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600776013333" />
+    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1600777123444">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600767147037" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600768787131">
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600777123444" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600768910333">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600768787131" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600768910333" />
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600766780793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
