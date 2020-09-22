@@ -593,7 +593,7 @@ function changeMode() {
         document.getElementById("toggle").style.color = "white";
         document.getElementById("all").style.color = "white";
         document.getElementById("second").style.color = "white";
-        document.getElementById("logo").src = "whitelogo.png";
+        document.getElementById("logo").src = "images/whitelogo.png";
         document.getElementById("background").style.opacity = 0;
         document.getElementById("background2").style.opacity = 1;
         document.getElementById("mapid").style.filter = "brightness(70%)";
