@@ -89,7 +89,7 @@ function storeLocationData(json) {
 }
 
 function getWeatherData(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&${config.WEATHER_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid${config.WEATHER_KEY}`)
         .then(function (answer) {
             return answer.json();
         }).then(function(json){
