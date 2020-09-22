@@ -610,7 +610,7 @@ function changeMode() {
         document.getElementById("toggle").style.color = "black";
         document.getElementById("all").style.color = "black";
         document.getElementById("second").style.color = "black";
-        document.getElementById("logo").src = "logo.png";
+        document.getElementById("logo").src = "images/logo.png";
         document.getElementById("background").style.opacity = 1;
         document.getElementById("background2").style.opacity = 0;
         document.getElementById("mapid").style.filter = "brightness(100%)";
