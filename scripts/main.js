@@ -1,5 +1,6 @@
 // Creating an array to store information on the mmsi, latitude and longitude of the ships
 let locationInformation = [];
+let circleInformation = [];
 let locationAPI = 'https://meri.digitraffic.fi/api/v1/locations/latest';
 let metadataAPI = 'https://meri.digitraffic.fi/api/v1/metadata/vessels';
 
@@ -85,6 +86,31 @@ function storeLocationData(json) {
                 'longitude' : json.features[i].geometry.coordinates[0]
             });
     }
+}
+
+function getWeatherData(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=84d359deffe03ea7a7ebe3687be9f05a`)
+        .then(function (answer) {
+            return answer.json();
+        }).then(function(json){
+            const latlng = L.latLng(lat, lon);
+            printWeatherData(json, latlng);
+
+        }).catch(function(error) {
+            console.log(error);
+        });
+}
+
+function printWeatherData(json, latlng) {
+    let popup = L.popup()
+        .setLatLng(latlng)
+        .setContent(`General weather: ${json.weather[0].main}
+                 <br>Temperature: ${(+json.main.temp - 273.15).toFixed(1)} 'C
+                 <br>Wind speed: ${json.wind.speed}`)
+        .openOn(mymap);
+    console.log("General weather: " + json.weather[0].main);
+    console.log("Temperature: " + (+json.main.temp - 273.15).toFixed(1) + ` 'C`);
+    console.log("Wind speed: " + json.wind.speed);
 }
 
 function catchMetadata(type, type2, typeName, typeColor) {
@@ -192,6 +218,7 @@ function catchMetadata(type, type2, typeName, typeColor) {
             }
 
             let circle = L.circle([locationInformation[shipMMSI].latitude, locationInformation[shipMMSI].longitude], {
+                id: i,
                 color: color,
                 fillColor: '#f03',
                 fillOpacity: 1.0,
@@ -209,7 +236,17 @@ function catchMetadata(type, type2, typeName, typeColor) {
             circle.bindPopup(`Ship name: ${name}
                                 <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
                                 <br>Ship type: ${shipTypeString}
-                                <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}`);
+                                <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
+                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>`);
+            circleInformation.push({
+                'shipMMSI' : locationInformation[shipMMSI].mmsi,
+                'popUp' : `Ship name: ${name}
+                                <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
+                                <br>Ship type: ${shipTypeString}
+                                <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
+                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>`
+
+            });
 
         }
 
@@ -225,7 +262,7 @@ function catchMetadata(type, type2, typeName, typeColor) {
 
 function getShips(mmsi, shipName) {
     for (let i = 0; i < locationInformation.length; i++) {
-        if (locationInformation[i].mmsi == mmsi) {
+        if (locationInformation[i].mmsi === mmsi) {
             locationInformation[i]['name'] = shipName;
             return i;
         }
@@ -246,19 +283,30 @@ function searchForShip(markers, searchBar) {
             continue;
         }
         // If search box is empty, do not do anything
-        if (search.value != "") {
+        if (search.value !== "") {
             // If mmsi checkbox is checked, search by the mmsi
             if (document.getElementById('mmsi').checked) {
                 if (locationInformation[i].mmsi === search) {
-                    marker = L.marker([locationInformation[i].latitude, locationInformation[i].longitude]).addTo(mymap);
+                    marker = L.marker([locationInformation[i].latitude, locationInformation[i].longitude]);
                     markers.addLayer(marker);
+                    for (let p = 0; p < circleInformation.length; p++) {
+                        if (circleInformation[p].shipMMSI === locationInformation[i].mmsi) {
+                            marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
+                        }
+                    }
                 }
             }
             // If ship name checkbox is checked, search by the mmsi
             if (document.getElementById('shipName').checked) {
                 if (locationInformation[i]['name'].toLowerCase().includes(search.toLowerCase())) {
-                    marker = L.marker([locationInformation[i].latitude, locationInformation[i].longitude]).addTo(mymap);
+                    marker = L.marker([locationInformation[i].latitude, locationInformation[i].longitude]);
+                    console.log(locationInformation[i].mmsi);
                     markers.addLayer(marker);
+                    for (let p = 0; p < circleInformation.length; p++) {
+                        if (circleInformation[p].shipMMSI === locationInformation[i].mmsi) {
+                            marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
+                        }
+                    }
                 }
             }
         }
