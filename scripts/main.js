@@ -95,7 +95,6 @@ function getWeatherData(lat, lon) {
         }).then(function(json){
             const latlng = L.latLng(lat, lon);
             printWeatherData(json, latlng);
-
         }).catch(function(error) {
             console.log(error);
         });
@@ -106,11 +105,11 @@ function printWeatherData(json, latlng) {
         .setLatLng(latlng)
         .setContent(`General weather: ${json.weather[0].main}
                  <br>Temperature: ${(+json.main.temp - 273.15).toFixed(1)} 'C
-                 <br>Wind speed: ${json.wind.speed}`)
+                 <br>Wind speed: ${json.wind.speed} m/s`)
         .openOn(mymap);
     console.log("General weather: " + json.weather[0].main);
     console.log("Temperature: " + (+json.main.temp - 273.15).toFixed(1) + ` 'C`);
-    console.log("Wind speed: " + json.wind.speed);
+    console.log("Wind speed: " + json.wind.speed + "m/s");
 }
 
 function catchMetadata(type, type2, typeName, typeColor) {
@@ -396,6 +395,7 @@ function changeMode() {
         document.body.style.backgroundColor = "#181818";
         document.getElementById("uppersection").style.backgroundColor = "#181818";
         document.getElementById("uppersection").style.color = "white";
+        document.getElementById("uppersection").style.boxShadow = "white 1px 1px 30px";
         document.getElementById("toggle").style.color = "white";
         document.getElementById("all").style.color = "white";
         document.getElementById("second").style.color = "white";
@@ -408,6 +408,7 @@ function changeMode() {
     } else {
         document.body.style.backgroundColor = "white";
         document.getElementById("uppersection").style.backgroundColor = "white";
+        document.getElementById("uppersection").style.boxShadow = "black 2px 2px 60px";
         document.getElementById("toggle").style.color = "black";
         document.getElementById("all").style.color = "black";
         document.getElementById("second").style.color = "black";

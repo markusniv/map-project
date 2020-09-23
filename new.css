@@ -134,7 +134,7 @@ body{
     height: 85vh;
     background-position: center;
     background-size: cover;
-    overflow-y: none;
+    overflow-y: hidden;
 }
 
 #background{
@@ -163,7 +163,7 @@ body{
     height: 70vh;
     width: 8vw;
     margin-top: 2vh;
-    transition: 1.5s ease;
+    transition: 1s ease;
 }
 
 #srch{
