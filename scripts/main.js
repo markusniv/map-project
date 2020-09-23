@@ -315,6 +315,14 @@ function searchForShip(markers, searchBar) {
     markers.addTo(mymap);
 }
 
+//adding the possibility to use Enter
+searchBar.addEventListener('keyup', e => {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        searchBtn.click();
+    }
+})
+
 //Show and hide color code elements
 function toggle() {
     let lista = document.getElementById("colors");
@@ -340,7 +348,7 @@ function showAll() {
 }
 
 //Clearing markers and displaying ships with precise typenumbers.
-
+document.gete
 function showExact(type, type2, typeName, typeColor) {
     ships.clearLayers();
     showAllShips = false;
@@ -417,8 +425,6 @@ function changeMode() {
         document.getElementById("background2").style.opacity = 0;
         document.getElementById("mapid").style.filter = "brightness(100%)";
         document.getElementById("colors").style.filter = "brightness(100%)";
-
-
     }
 
 }

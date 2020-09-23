@@ -49,13 +49,11 @@
     background: transparent;
     padding: 0px;
     transition: 1.5s ease;
-
 }
 
 .button{
     margin-top: 1vh;
 }
-
 
 #second{
     display: flex;
@@ -82,8 +80,6 @@ button {
     cursor: pointer;
     transition: 1.5s ease;
 }
-
-
 
 #mode{
     position: relative;
@@ -153,7 +149,6 @@ body{
     opacity: 0;
 }
 #colors{
-   
     display: flex;
     flex-flow: column wrap;
     position: relative;
@@ -177,7 +172,6 @@ body{
     border-radius: 10px;
     width: 30%;
     height: 35%;
-
 }
 
 #select{
@@ -227,8 +221,7 @@ input[type=radio]{
     cursor: pointer;
 }
 
-#vari1{
-    background: blue;
+.color{
     width: 100%;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -237,6 +230,16 @@ input[type=radio]{
     height: 4%;
     box-shadow: black 5px 5px 5px;
     transition: 0.05s ease;
+}
+
+.color:active{
+    font-size: 1.4vh;
+    box-shadow: black 2px 2px 2px;
+    width: 96%;
+}
+
+#vari1{
+    background: blue;
 }
 
 #vari1:active{
@@ -247,166 +250,54 @@ input[type=radio]{
 
 #vari2{
     background: yellow;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
+    color: black;
 }
-#vari2:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
-}
+
 
 #vari3{
     background: green;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
 }
-#vari3:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
-}
+
 
 
 #vari4{
     background: white;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
+    color: black;
 }
-#vari4:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
-}
-
 
 #vari5{
     background: white;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
+    color: black;
 }
-#vari5:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
-}
-
 
 #vari6{
     background: crimson;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
 }
-#vari6:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
-}
-
 
 #vari7{
     background: orange;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
     color: white;
 }
-#vari7:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
-}
 
-
-#vari8{
+#vari8 {
     background: darkkhaki;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
 }
-#vari8:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
-}
-
 
 #vari9{
     background: yellow;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
-}
-#vari9:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
+    color: black;
 }
 
 #vari10{
     background: magenta;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
     color: white;
-}
-#vari10:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #vari11{
     background: darkslategray;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
     color: white;
     font-size: 1.2vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
+
 }
 #vari11:active{
     font-size: 1.1vh;
@@ -416,90 +307,29 @@ input[type=radio]{
 
 #vari12{
     background: darkblue;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
     color: white;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
-}
-#vari12:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #vari13{
     background: red;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
-}
-#vari13:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #vari14{
     background: brown;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
-}
-#vari14:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #vari15{
     background: black;
-    width: 100%;
     color: white;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
-}
-#vari15:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #vari16{
     background: slategrey;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 1.5vh;
-    height: 4%;
-    box-shadow: black 5px 5px 5px;
-    transition: 0.05s ease;
-}
-#vari16:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #mobileReset{
     visibility: hidden;
 }
-
 
 @media (min-width: 2000px) and (min-height: 1000px){
     #first{
@@ -512,11 +342,9 @@ input[type=radio]{
     #srch{
         width: 50%;
     }
-
     #uppersection{
         height: 140px;
     }
-
     .button{
         font-size: 2vh;
     }
@@ -533,50 +361,41 @@ input[type=radio]{
     #uppersection{
         flex-flow: column wrap;
         height: 20%;
-        
     }
     #first {
         position: absolute;
         top: 7vh;
-        
     }
-
     #midsection{
         flex-flow: column wrap;
     }
-
     #logo{
         position: absolute;
         top: -4vh;
     }
-
     #background{
         visibility: hidden;
     }
     #background2{
         visibility: hidden;
     }
-  
     #srch{
         position: absolute;
         top: 5vh;
         width: 50%;
     }
-
     #searchBar{
         height: 3vh;
     }
     #search{
         height: 3vh;
     }
-
     #second{
         position: absolute;
         top: 16vh;
         left: 4vw;
         background: transparent;
         color: black;
-    
     }
     body{
         background-image: url("images/mobilebackground.jpg");
@@ -586,7 +405,6 @@ input[type=radio]{
         width: 90vw;
         bottom: 15%;
     }
-
     #colors{
         width: 40%;
         height: 40%;
