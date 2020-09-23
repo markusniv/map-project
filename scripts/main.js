@@ -426,5 +426,21 @@ function changeMode() {
         document.getElementById("mapid").style.filter = "brightness(100%)";
         document.getElementById("colors").style.filter = "brightness(100%)";
     }
+}
 
+//cookies function
+
+if (document.getElementById("cookies").classList.contains("visible")) {
+    document.getElementById("midsection").style.filter = "brightness(30%)";
+    document.getElementById("uppersection").style.filter = "brightness(30%)";
+    document.getElementById("background").style.filter = "brightness(30%)";
+}
+
+function cookies(){
+    let cookies = document.getElementById("cookies");
+        cookies.classList.remove("visible");
+        cookies.classList.add("hidden");
+    document.getElementById("midsection").style.filter = "brightness(100%)";
+    document.getElementById("uppersection").style.filter = "brightness(100%)";
+    document.getElementById("background").style.filter = "brightness(100%)";
 }
