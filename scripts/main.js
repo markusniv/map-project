@@ -460,8 +460,6 @@ function changeMode() {
 function removeStartScreen(){
     document.getElementById("intro").remove();
     document.getElementById("cover").remove();
-    document.getElementById("cover2").remove();
-    document.getElementById("cover3").remove();
 }
 
 function intro(){
@@ -469,8 +467,6 @@ function intro(){
     intro.style.top = "-100%";
     intro.style.opacity = "0.9";
     document.getElementById("cover").style.left = "100%";
-    document.getElementById("cover2").style.top = "100%";
-    document.getElementById("cover3").style.right = "100%";
     setTimeout(removeStartScreen, 1500);
 }
 

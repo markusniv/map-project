@@ -450,7 +450,7 @@ input[type=radio]{
     align-content: center;
     justify-content: center;
     align-items: center;
-    animation: blink 2000ms infinite;
+    animation: blink 1000ms infinite;
 }
 #continue:hover{
     background: darkgray;
@@ -500,28 +500,6 @@ input[type=radio]{
     width: 100%;
     background: #181818;
     z-index: 1900;
-    transition: 1.5s;
-}
-
-#cover2{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    background: gray;
-    z-index: 1800;
-    transition: 1.5s;
-}
-
-#cover3{
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    height: 100%;
-    width: 100%;
-    background: darkgray;
-    z-index: 1850;
     transition: 1.5s;
 }
 
