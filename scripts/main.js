@@ -31,19 +31,17 @@ const ships = new L.LayerGroup;
 storeLocationData();
 
 // Requesting the Digitraffic ship metadata API and storing the information into metadataInformation
+// Creating the markers for the ships on the map. Creating popups when clicking the ships using the metadata to show things such as ship names.
 
 fetch(metadataAPI)
     .then(function (answer) {
         return answer.json();
     }).then(function(json){
     metadataInformation = json;
+    catchMetadata();
 }).catch(function(error) {
     console.log(error);
 });
-
-// Creating the markers for the ships on the map. Creating popups when clicking the ships using the metadata to show things such as ship names.
-
-catchMetadata();
 
 // Adding search function to the map, allowing search by either the mmsi or ship name. If ship is found, a marker is
 // put on the map at the ship's location
@@ -118,8 +116,8 @@ function storeLocationData() {
 // Reload the locations from the API
 
 function resetLocationData() {
-    ships.clearLayers();
     storeLocationData();
+    showAll();
 }
 
 // Get weather data from the area where a ship currently resides from OpenWeatherMap
