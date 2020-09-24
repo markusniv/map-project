@@ -118,6 +118,7 @@ function storeLocationData() {
 
 function resetLocationData() {
     ships.clearLayers();
+    locationInformation = [];
     storeLocationData();
     catchMetadata();
 }

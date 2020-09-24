@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Changed it so that the metadata API is only called once at the start of the code">
+    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Added button to reload ship locations from the API + code formatting and comments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +141,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1600790367578</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Added button to reload ship locations from the API + code formatting and comments.">
+      <created>1600939178326</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1600939178326</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +175,8 @@
     <MESSAGE value="Added OneWeatherMap API to show general weather information at the ship locations. Also added a popup to show up when searching for ships." />
     <MESSAGE value="Hid API keys" />
     <MESSAGE value="Fixed bug with API key" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with API key" />
+    <MESSAGE value="Added button to reload ship locations from the API + code formatting and comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added button to reload ship locations from the API + code formatting and comments." />
   </component>
   <component name="WindowStateProjectService">
     <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600776013333">
@@ -186,11 +192,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600932253572" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1600938691939">
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1600939179737">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600768910333" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600938691939" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600939179737" />
     <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1600932260002">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
