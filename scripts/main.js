@@ -437,7 +437,7 @@ function changeMode() {
         document.getElementById("background").style.opacity = 0;
         document.getElementById("background2").style.opacity = 1;
         document.getElementById("mapid").style.filter = "brightness(70%)";
-        document.getElementById("colors").style.filter = "brightness(70%)";
+        document.getElementById("colorbutton").style.filter = "brightness(70%)";
         document.getElementById("resetLocation").style.color = "white";
 
     } else {
@@ -450,7 +450,7 @@ function changeMode() {
         document.getElementById("background").style.opacity = 1;
         document.getElementById("background2").style.opacity = 0;
         document.getElementById("mapid").style.filter = "brightness(100%)";
-        document.getElementById("colors").style.filter = "brightness(100%)";
+        document.getElementById("colorbutton").style.filter = "brightness(100%)";
         document.getElementById("resetLocation").style.color = "black";
     }
 }
@@ -475,13 +475,16 @@ function intro(){
 function displayColors(){
     let colorbutton = document.getElementById("colorbutton");
     let colors = document.getElementById("colors");
+    let arrow = document.getElementById("arrow");
     if(colors.className === 'hidden') {
         colorbutton.style.left = "0%";
         colors.classList.remove("hidden");
         colors.classList.add("visible");
+        arrow.style.webkitTransform = "rotate(180deg)";
     } else {
         colorbutton.style.left = "10%";
         colors.classList.remove("visible");
         colors.classList.add("hidden");
+        arrow.style.webkitTransform = "rotate(0deg)";
     }
 }
