@@ -28,14 +28,7 @@ const ships = new L.LayerGroup;
 
 // Requesting the Digitraffic ship location API and pushing the information into locationInformation array
 
-fetch(locationAPI)
-    .then(function (answer) {
-        return answer.json();
-    }).then(function(json){
-        storeLocationData(json);
-    }).catch(function(error) {
-        console.log(error);
-});
+storeLocationData();
 
 // Requesting the Digitraffic ship metadata API and storing the information into metadataInformation
 
@@ -65,6 +58,14 @@ searchBtn.addEventListener('click', e => {
     searchForShip(markers, searchBar, searchBtn);
 });
 
+// Searching when pressing enter while search bar is active
+searchBar.addEventListener('keyup', e => {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        searchBtn.click();
+    }
+});
+
 // If map is clicked on, clear all the markers
 mymap.addEventListener('click', e => {
     markers.eachLayer((layer) => {
@@ -75,29 +76,53 @@ mymap.addEventListener('click', e => {
 // HERE ARE ALL THE FUNCTIONS!
 //
 // 1. storeLocationData
-// 2. catchMetadata
-// 3. getShips
-// 4. searchForShip
-// 5. toggle
-// 6. showAll
-// 7. showExact
-// 8. showInBetween
-// 9. showBoth
-// 10. showOthers
-// 11. changeMode
-//
+// 2. resetLocationData
+// 3. getWeatherData
+// 4. printWeatherData
+// 5. catchMetadata
+// 6. getShips
+// 7. searchForShip
+// 8. toggle
+// 9. showAll
+// 10. showExact
+// 11. showInBetween
+// 12. showBoth
+// 13. showOthers
+// 14. changeMode
+// 15. removeStartScreen
+// 16. intro
+// 17. displayColors
 //
 
-function storeLocationData(json) {
-    for (let i = 0; i < json.features.length; i++) {
-        // Storing the mmsi, latitude and longitude as a singular object and pushing it into the array
-        locationInformation.push(
-            {'mmsi' : json.features[i].mmsi,
-             'latitude' : json.features[i].geometry.coordinates[1],
-             'longitude' : json.features[i].geometry.coordinates[0]
-            });
-    }
+// Store the location data from the API into locationInformation
+
+function storeLocationData() {
+    fetch(locationAPI)
+        .then(function (answer) {
+            return answer.json();
+        }).then(function(json){
+        for (let i = 0; i < json.features.length; i++) {
+            // Storing the mmsi, latitude and longitude as a singular object and pushing it into the array
+            locationInformation.push(
+                {'mmsi' : json.features[i].mmsi,
+                    'latitude' : json.features[i].geometry.coordinates[1],
+                    'longitude' : json.features[i].geometry.coordinates[0]
+                });
+        }
+    }).catch(function(error) {
+        console.log(error);
+    });
 }
+
+// Reload the locations from the API
+
+function resetLocationData() {
+    ships.clearLayers();
+    storeLocationData();
+    catchMetadata();
+}
+
+// Get weather data from the area where a ship currently resides from OpenWeatherMap
 
 function getWeatherData(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${config.WEATHER_KEY}`)
@@ -111,6 +136,8 @@ function getWeatherData(lat, lon) {
         });
 }
 
+// Print weather data from getWeatherData into a popup
+
 function printWeatherData(json, latlng) {
     let popup = L.popup()
         .setLatLng(latlng)
@@ -122,6 +149,8 @@ function printWeatherData(json, latlng) {
     console.log("Temperature: " + (+json.main.temp - 273.15).toFixed(1) + ` 'C`);
     console.log("Wind speed: " + json.wind.speed + "m/s");
 }
+
+// Use the ship metadataInformation and locationInformation collected from the APIs to draw circles representing the ships on the map
 
 function catchMetadata(type, type2, typeName, typeColor) {
 
@@ -272,6 +301,8 @@ function getShips(mmsi, shipName) {
     }
 }
 
+// Search for ship via either the mmsi or ship name
+
 function searchForShip(markers, searchBar) {
     // Clearing the markers before new search
     markers.eachLayer((layer) => {
@@ -319,14 +350,6 @@ function searchForShip(markers, searchBar) {
     markers.addTo(mymap);
 }
 
-//adding the possibility to use Enter
-searchBar.addEventListener('keyup', e => {
-    if (e.keyCode === 13) {
-        e.preventDefault();
-        searchBtn.click();
-    }
-})
-
 //Show and hide color code elements
 function toggle() {
     let lista = document.getElementById("colors");
@@ -340,6 +363,8 @@ function toggle() {
         lista.classList.add("hidden");
     }
 }
+
+// Shows all types of ships
 
 function showAll() {
     ships.clearLayers();
@@ -435,9 +460,7 @@ function changeMode() {
 function removeStartScreen(){
     document.getElementById("intro").remove();
     document.getElementById("cover").remove();
-
 }
-
 
 function intro(){
     let intro = document.getElementById("intro");

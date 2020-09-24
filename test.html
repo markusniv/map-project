@@ -22,13 +22,13 @@
             <button id="search"><img id="srchicon" src="images/magnifyingglass.png" width="20px" height="20px"></button>
             <br>
         </div>
-        <button class="button" id="all" onclick="showAll()">Show all</button>
+        <button class="button" id="all" onclick="showAll()">Show all</button><button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
         </div>
         <div id="second">      
-            <input type="radio" id="shipName" name="searchType" value="shipName">
+            <input type="radio" id="shipName" name="searchType" value="shipName" checked="checked">
             <label for="shipName">Ship Name</label>
                 <br>
-                <input type="radio" id="mmsi" name="searchType" value="mmsi" checked="checked">
+                <input type="radio" id="mmsi" name="searchType" value="mmsi">
                 <label for="mmsi">Maritime Mobile Service Identity</label>
                 <br>
                 <div id="mode">
