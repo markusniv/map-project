@@ -178,7 +178,7 @@ body{
     background: #484848;
     -webkit-transform: rotate(-90deg);
     width: 4vw;
-    height: 4vh;
+    height: 5vh;
     margin: 0px;
     position: relative;
     left: 14%;
@@ -368,7 +368,7 @@ input[type=radio]{
 
 }
 #vari11:active{
-    font-size: 1.1vh;
+    font-size: 1vh;
     box-shadow: black 2px 2px 2px;
     width: 96%;
 }
@@ -565,7 +565,6 @@ input[type=radio]{
     .color{
         height: 15%;
     }
-
     #colorbutton2{
         visibility: hidden;
     }
@@ -575,9 +574,7 @@ input[type=radio]{
         bottom: 5%;
         width: 25%;
         left: 35%;
-
     }
-
     #displaycolors{
         visibility: hidden;
     }
@@ -590,7 +587,6 @@ input[type=radio]{
     #intro{
         visibility: hidden;
     }
-
     #resetLocation{
         margin-left: 15vw;
     }
