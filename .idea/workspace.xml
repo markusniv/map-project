@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Added button to reload ship locations from the API + code formatting and comments.">
+    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Fixed issue with locationInformation array not emptying when reloading data into it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
     </list>
@@ -147,7 +147,13 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1600939178326</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="Fixed issue with locationInformation array not emptying when reloading data into it">
+      <created>1600939499985</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1600939499985</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +182,8 @@
     <MESSAGE value="Hid API keys" />
     <MESSAGE value="Fixed bug with API key" />
     <MESSAGE value="Added button to reload ship locations from the API + code formatting and comments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added button to reload ship locations from the API + code formatting and comments." />
+    <MESSAGE value="Fixed issue with locationInformation array not emptying when reloading data into it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with locationInformation array not emptying when reloading data into it" />
   </component>
   <component name="WindowStateProjectService">
     <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600776013333">
@@ -192,15 +199,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600932253572" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1600939179737">
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1600939502834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600768910333" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600939179737" />
-    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1600932260002">
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600939502834" />
+    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1600939459124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600932260002" />
+    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600939459124" />
     <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600766780793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
