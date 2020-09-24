@@ -430,21 +430,17 @@ function changeMode() {
     }
 }
 
-//cookies function
+//intro function
 
-if (document.getElementById("cookies").classList.contains("visible")) {
-    document.getElementById("midsection").style.filter = "brightness(30%)";
-    document.getElementById("uppersection").style.filter = "brightness(30%)";
-    document.getElementById("background").style.filter = "brightness(30%)";
+function removeStartScreen(){
+    document.getElementById("cookies").remove();
 }
 
-function cookies(){
-    let cookies = document.getElementById("cookies");
-        cookies.classList.remove("visible");
-        cookies.classList.add("hidden");
-    document.getElementById("midsection").style.filter = "brightness(100%)";
-    document.getElementById("uppersection").style.filter = "brightness(100%)";
-    document.getElementById("background").style.filter = "brightness(100%)";
+function intro(){
+    let intro = document.getElementById("intro");
+    intro.style.top = "-100%";
+    intro.style.opacity = "0.9";
+    setTimeout(removeStartScreen, 2000)
 }
 
 //Displays the color code buttons by sliding them to the left
