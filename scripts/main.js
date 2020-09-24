@@ -1,5 +1,6 @@
 // Creating an array to store information on the mmsi, latitude and longitude of the ships
 let locationInformation = [];
+let metadataInformation = [];
 let circleInformation = [];
 let locationAPI = 'https://meri.digitraffic.fi/api/v1/locations/latest';
 let metadataAPI = 'https://meri.digitraffic.fi/api/v1/metadata/vessels';
@@ -36,8 +37,18 @@ fetch(locationAPI)
         console.log(error);
 });
 
-// Requesting the Digitraffic ship metadata API and creating the markers for the ships on the map. Creating popups when clicking the ships
-// using the metadata to show things such as ship names.
+// Requesting the Digitraffic ship metadata API and storing the information into metadataInformation
+
+fetch(metadataAPI)
+    .then(function (answer) {
+        return answer.json();
+    }).then(function(json){
+    metadataInformation = json;
+}).catch(function(error) {
+    console.log(error);
+});
+
+// Creating the markers for the ships on the map. Creating popups when clicking the ships using the metadata to show things such as ship names.
 
 catchMetadata();
 
@@ -82,8 +93,8 @@ function storeLocationData(json) {
         // Storing the mmsi, latitude and longitude as a singular object and pushing it into the array
         locationInformation.push(
             {'mmsi' : json.features[i].mmsi,
-                'latitude' : json.features[i].geometry.coordinates[1],
-                'longitude' : json.features[i].geometry.coordinates[0]
+             'latitude' : json.features[i].geometry.coordinates[1],
+             'longitude' : json.features[i].geometry.coordinates[0]
             });
     }
 }
@@ -114,145 +125,138 @@ function printWeatherData(json, latlng) {
 
 function catchMetadata(type, type2, typeName, typeColor) {
 
-    fetch(metadataAPI)
-        .then(function (answer) {
-            return answer.json();
-        }).then(function (json) {
-        for (let i = 0; i < json.length; i++) {
-            // Calling the getShips function to fuse the correct ship location with the correct metadata and to add
-            // the ship name from this JSON to the array
-            const shipNameString = json[i].name;
-            const shipMMSI = getShips(json[i].mmsi, shipNameString);
+    for (let i = 0; i < metadataInformation.length; i++) {
+        // Calling the getShips function to fuse the correct ship location with the correct metadata and to add
+        // the ship name from this JSON to the array
+        const shipNameString = metadataInformation[i].name;
+        const shipMMSI = getShips(metadataInformation[i].mmsi, shipNameString);
 
-            if (shipMMSI == undefined) {
+        if (shipMMSI == undefined) {
+            continue;
+        }
+        const shipType = metadataInformation[i].shipType;
+        let shipTypeString;
+        let color;
+
+        if (showAllShips) {
+
+            if (shipType === 30) {
+                shipTypeString = 'fishing';
+                color = 'blue';
+            } else if (shipType === 31 || shipType === 32) {
+                shipTypeString = 'towing';
+                color = 'yellow'
+            } else if (shipType === 35) {
+                shipTypeString = 'military';
+                color = 'green';
+            } else if (shipType === 36) {
+                shipTypeString = 'sailing';
+                color = 'white';
+            } else if (shipType === 37) {
+                shipTypeString = 'pleasure craft'
+                color = 'white';
+            } else if (shipType >= 40 && shipType < 50) {
+                shipTypeString = 'high speed craft';
+                color = 'crimson'
+            } else if (shipType === 50) {
+                shipTypeString = 'pilot vessel';
+                color = 'orange'
+            } else if (shipType === 51) {
+                shipTypeString = 'search and rescue';
+                color = 'darkkhaki'
+            } else if (shipType === 52) {
+                shipTypeString = 'tug';
+                color = 'yellow';
+            } else if (shipType === 53) {
+                shipTypeString = 'port tender';
+                color = 'magenta';
+            } else if (shipType === 54) {
+                shipTypeString = 'anti-pollution equipment';
+                color = 'darkslategray'
+            } else if (shipType === 55) {
+                shipTypeString = 'law enforcement';
+                color = 'darkblue';
+            } else if (shipType >= 60 && shipType < 70) {
+                shipTypeString = 'passenger';
+                color = 'red';
+            } else if (shipType >= 70 && shipType < 80) {
+                shipTypeString = 'cargo';
+                color = 'brown';
+            } else if (shipType >= 80 && shipType < 90) {
+                shipTypeString = 'tanker';
+                color = 'black';
+            } else {
+                shipTypeString = 'other';
+                color = 'slategrey';
+            }
+        }
+        if (showExactShips) {
+            if (shipType === type) {
+                shipTypeString = typeName;
+                color = typeColor;
+            } else {
                 continue;
             }
-            const shipType = json[i].shipType;
-            let shipTypeString;
-            let color;
+        }
+        if (showInBetweenShips) {
+            if (shipType >= +type && shipType < +type2) {
+                shipTypeString = typeName;
+                color = typeColor;
+            } else {
+                continue;
+            }
+        }
+        if (showBothShips) {
+            if (shipType === +type || shipType === +type2 ) {
+                shipTypeString = typeName;
+                color = typeColor;
+            } else {
+                continue;
+            }
+        }
+        if (showOtherShips) {
+            if (shipType < +type || shipType > +type2) {
+                shipTypeString = typeName;
+                color = typeColor;
+            } else {
+                continue;
+            }
+        }
 
-            if (showAllShips) {
+        let circle = L.circle([locationInformation[shipMMSI].latitude, locationInformation[shipMMSI].longitude], {
+            id: i,
+            color: color,
+            fillColor: '#f03',
+            fillOpacity: 1.0,
+            radius: 5,
+        }).addTo(ships);
+        const name = metadataInformation[i].name;
+        let destination = metadataInformation[i].destination;
 
-                if (shipType === 30) {
-                    shipTypeString = 'fishing';
-                    color = 'blue';
-                } else if (shipType === 31 || shipType === 32) {
-                    shipTypeString = 'towing';
-                    color = 'yellow'
-                } else if (shipType === 35) {
-                    shipTypeString = 'military';
-                    color = 'green';
-                } else if (shipType === 36) {
-                    shipTypeString = 'sailing';
-                    color = 'white';
-                } else if (shipType === 37) {
-                    shipTypeString = 'pleasure craft'
-                    color = 'white';
-                } else if (shipType >= 40 && shipType < 50) {
-                    shipTypeString = 'high speed craft';
-                    color = 'crimson'
-                } else if (shipType === 50) {
-                    shipTypeString = 'pilot vessel';
-                    color = 'orange'
-                } else if (shipType === 51) {
-                    shipTypeString = 'search and rescue';
-                    color = 'darkkhaki'
-                } else if (shipType === 52) {
-                    shipTypeString = 'tug';
-                    color = 'yellow';
-                } else if (shipType === 53) {
-                    shipTypeString = 'port tender';
-                    color = 'magenta';
-                } else if (shipType === 54) {
-                    shipTypeString = 'anti-pollution equipment';
-                    color = 'darkslategray'
-                } else if (shipType === 55) {
-                    shipTypeString = 'law enforcement';
-                    color = 'darkblue';
-                } else if (shipType >= 60 && shipType < 70) {
-                    shipTypeString = 'passenger';
-                    color = 'red';
-                } else if (shipType >= 70 && shipType < 80) {
-                    shipTypeString = 'cargo';
-                    color = 'brown';
-                } else if (shipType >= 80 && shipType < 90) {
-                    shipTypeString = 'tanker';
-                    color = 'black';
-                } else {
-                    shipTypeString = 'other';
-                    color = 'slategrey';
-                }
-            }
-            if (showExactShips) {
-                if (shipType === type) {
-                    shipTypeString = typeName;
-                    color = typeColor;
-                } else {
-                    continue;
-                }
-            }
-            if (showInBetweenShips) {
-                if (shipType >= +type && shipType < +type2) {
-                    shipTypeString = typeName;
-                    color = typeColor;
-                } else {
-                    continue;
-                }
-            }
-            if (showBothShips) {
-                if (shipType === +type || shipType === +type2 ) {
-                    shipTypeString = typeName;
-                    color = typeColor;
-                } else {
-                    continue;
-                }
-            }
-            if (showOtherShips) {
-                if (shipType < +type || shipType > +type2) {
-                    shipTypeString = typeName;
-                    color = typeColor;
-                } else {
-                    continue;
-                }
-            }
+        // If destination for some reason also includes the starting point, only show the destination
+        if (destination.includes('>')) {
+            const destinationArray = destination.split(">");
+            destination = destinationArray[1];
+        }
 
-            let circle = L.circle([locationInformation[shipMMSI].latitude, locationInformation[shipMMSI].longitude], {
-                id: i,
-                color: color,
-                fillColor: '#f03',
-                fillOpacity: 1.0,
-                radius: 5,
-            }).addTo(ships);
-            const name = json[i].name;
-            let destination = json[i].destination;
-
-            // If destination for some reason also includes the starting point, only show the destination
-            if (destination.includes('>')) {
-                const destinationArray = destination.split(">");
-                destination = destinationArray[1];
-            }
-
-            circle.bindPopup(`Ship name: ${name}
+        circle.bindPopup(`Ship name: ${name}
                                 <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
                                 <br>Ship type: ${shipTypeString}
                                 <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
                                 <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>`);
-            circleInformation.push({
-                'shipMMSI' : locationInformation[shipMMSI].mmsi,
-                'popUp' : `Ship name: ${name}
+        circleInformation.push({
+            'shipMMSI' : locationInformation[shipMMSI].mmsi,
+            'popUp' : `Ship name: ${name}
                                 <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
                                 <br>Ship type: ${shipTypeString}
                                 <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
                                 <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>`
 
-            });
+        });
 
-        }
+    }
 
-    }).catch(function (error) {
-        console.log(error);
-    });
-    ships.addTo(mymap);
+ships.addTo(mymap);
 }
 
 // Comparing the mmsi information from the location array to the current ship in the metadata list to make sure
