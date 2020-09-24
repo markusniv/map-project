@@ -78,6 +78,11 @@
     margin-top: 1vh;
 }
 
+#resetLocation{
+    color: black;
+    transition: 1.5s ease;
+}
+
 #second{
     display: flex;
     flex-flow: row wrap;
@@ -156,6 +161,41 @@ body{
     overflow-y: hidden;
 }
 
+#colorbutton{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 15%;
+    position: relative;
+    left: 10%;
+    transition: 1s;
+}
+
+#colorbutton2{
+    background: #484848;
+    -webkit-transform: rotate(-90deg);
+    width: 4vw;
+    height: 4vh;
+    margin: 0px;
+    position: relative;
+    left: 14%;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: 0.2s;
+}
+
+#colorbutton2:hover{
+    background: #787878;
+}
+
+#colorbutton2:active{
+    background: black;
+}
+
 #background{
     position: absolute;
     top: 0%;
@@ -180,7 +220,7 @@ body{
     align-items: center;
     align-content: center;
     height: 70vh;
-    width: 8vw;
+    width: 10vw;
     margin-top: 2vh;
     transition: 0.6s;
 }
@@ -454,6 +494,16 @@ input[type=radio]{
     #continue{
         font-size: 1vw;
     }
+    #colorbutton{
+        width: 16%;
+    }
+
+    #colorbutton2{
+        left: 13%;
+        width: 5vw;
+    }
+
+
 }
 
 @media (max-width: 1000px) {
@@ -505,24 +555,29 @@ input[type=radio]{
         bottom: 20%;
     }
     #colors{
-        width: 40%;
+        width: 100%;
         height: 40%;
         position: absolute;
         bottom: 0%;
         flex-flow: column wrap;
-    }
-    #intro2{
-        font-size: 2vw;
-    }
-    #continue{
-        width: 50%;
-        font-size: 3vw;
-    }
-    #colors{
         visibility: visible;
-        left: 10%;
-        bottom: 1%;
     }
+    .color{
+        height: 15%;
+    }
+
+    #colorbutton2{
+        visibility: hidden;
+    }
+    #colorbutton{
+        position: absolute;
+        height: 90%;
+        bottom: 5%;
+        width: 25%;
+        left: 35%;
+
+    }
+
     #displaycolors{
         visibility: hidden;
     }
@@ -534,5 +589,9 @@ input[type=radio]{
     }
     #intro{
         visibility: hidden;
+    }
+
+    #resetLocation{
+        margin-left: 15vw;
     }
 }
