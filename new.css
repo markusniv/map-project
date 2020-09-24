@@ -443,15 +443,53 @@ input[type=radio]{
     width: 15%;
     height: 30%;
     border-radius: 5px;
-    transition: 0.9s ease;
+    transition: 0.1s ease;
+    color: white;
     display: flex;
     flex-flow: column wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
+    animation: blink 2000ms infinite;
 }
 #continue:hover{
     background: darkgray;
+}
+
+@keyframes blink{
+    0% {
+        background-color: #E8E8E8;
+    }
+    10%{
+        background-color: #D8D8D8;
+    }
+    20%{
+        background-color: #C8C8C8;
+    }
+    30%{
+        background-color: #B0B0B0;
+    }
+    40%{
+        background-color: #A0A0A0;
+    }
+    50%{
+        background-color: #888888;
+    }
+    60%{
+        background-color: #A0A0A0;
+    }
+    70%{
+        background-color: #B0B0B0;
+    }
+    80%{
+        background-color: #C8C8C8;
+    }
+    90%{
+        background-color: #D8D8D8;
+    }
+    100%{
+        background-color: #E8E8E8;
+    }
 }
 
 #cover{
@@ -462,6 +500,28 @@ input[type=radio]{
     width: 100%;
     background: #181818;
     z-index: 1900;
+    transition: 1.5s;
+}
+
+#cover2{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background: gray;
+    z-index: 1800;
+    transition: 1.5s;
+}
+
+#cover3{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+    background: darkgray;
+    z-index: 1850;
     transition: 1.5s;
 }
 
