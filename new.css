@@ -181,10 +181,9 @@ body{
     height: 5vh;
     margin: 0px;
     position: relative;
-    left: 14%;
+    left: 10%;
     color: white;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 8px 8px 3px 3px;
     transition: 0.2s;
 }
 
