@@ -501,8 +501,13 @@ input[type=radio]{
         bottom: 0%;
         flex-flow: column wrap;
     }
+    #intro2{
+        font-size: 2vw;
+    }
+
     #continue{
         width: 50%;
+        font-size: 3vw;
     }
     #colors{
         visibility: visible;
@@ -511,5 +516,9 @@ input[type=radio]{
     }
     #displaycolors{
         visibility: hidden;
+    }
+    #startlogo{
+        width: 80vw;
+
     }
 }

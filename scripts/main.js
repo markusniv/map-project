@@ -433,7 +433,7 @@ function changeMode() {
 //intro function
 
 function removeStartScreen(){
-    document.getElementById("cookies").remove();
+    document.getElementById("intro").remove();
 }
 
 function intro(){
