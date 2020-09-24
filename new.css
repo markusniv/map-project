@@ -175,6 +175,10 @@ body{
 }
 
 #colorbutton2{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
     background: white;
     border: black solid 2px;
     -webkit-transform: rotate(-90deg);
@@ -204,9 +208,9 @@ body{
 }
 #colorText{
     opacity: 1;
-    position: absolute;
-    left: 1%;
-    top: 10%;
+    position: relative;
+    bottom: 50%;
+    font-size: 1vw;
 }
 
 #colorbutton2:hover{
@@ -568,8 +572,6 @@ input[type=radio]{
         left: 13%;
         width: 5vw;
     }
-
-
 }
 
 @media (max-width: 1000px) {
@@ -619,6 +621,7 @@ input[type=radio]{
         height: 40vh;
         width: 90vw;
         bottom: 20%;
+        left: 8%;
     }
     #colors{
         width: 100%;
