@@ -22,7 +22,6 @@
             <button id="search"><img id="srchicon" src="images/magnifyingglass.png" width="20px" height="20px"></button>
             <br>
         </div>
-        <button class="button" id="toggle" onclick="toggle()">Show/hide color codes</button>
         <button class="button" id="all" onclick="showAll()">Show all</button>
         </div>
         <div id="second">      
@@ -39,8 +38,8 @@
                 
         </div>
     </section>
-    <section id="midsection">
-        <div id="colors" class="visible">
+    <main id="midsection">
+        <div id="colors" class="hidden">
                 <button id="vari1" class="color" onclick="showExact(30, null, 'fishing', 'blue')"><span>Fishing</span></button>
                 <button id="vari2" class="color" onclick="showBoth(31, 32, 'towing', 'yellow')"><span>Towing</span></button>
                 <button id="vari3" class="color" onclick="showExact(35, null, 'military', 'green')"><span>Military</span></button>
@@ -59,9 +58,10 @@
                 <button id="vari16" class="color" onclick="showOthers(30, 90, 'other', 'slategray')"><span>Other</span></button>  
         </div>
         <div id="mapid">
+               <button id="displaycolors" onclick="displayColors()">Color codes</button>
             /* Here is a map */
         </div>
-    </section>
+    </main>
     <div id="mobilelogo"><img src="images/mobileLogo.png" width="750px" height="150px"></div>
     <section id="cookies" class="visible">
     <div id="cookies2">This is a school project, thus, this website does NOT use cookies.

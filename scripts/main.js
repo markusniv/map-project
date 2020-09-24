@@ -348,7 +348,7 @@ function showAll() {
 }
 
 //Clearing markers and displaying ships with precise typenumbers.
-document.gete
+
 function showExact(type, type2, typeName, typeColor) {
     ships.clearLayers();
     showAllShips = false;
@@ -404,7 +404,6 @@ function changeMode() {
         document.getElementById("uppersection").style.backgroundColor = "#181818";
         document.getElementById("uppersection").style.color = "white";
         document.getElementById("uppersection").style.boxShadow = "white 1px 1px 30px";
-        document.getElementById("toggle").style.color = "white";
         document.getElementById("all").style.color = "white";
         document.getElementById("second").style.color = "white";
         document.getElementById("logo").src = "images/whitelogo.png";
@@ -417,7 +416,6 @@ function changeMode() {
         document.body.style.backgroundColor = "white";
         document.getElementById("uppersection").style.backgroundColor = "white";
         document.getElementById("uppersection").style.boxShadow = "black 2px 2px 60px";
-        document.getElementById("toggle").style.color = "black";
         document.getElementById("all").style.color = "black";
         document.getElementById("second").style.color = "black";
         document.getElementById("logo").src = "images/logo.png";
@@ -443,4 +441,19 @@ function cookies(){
     document.getElementById("midsection").style.filter = "brightness(100%)";
     document.getElementById("uppersection").style.filter = "brightness(100%)";
     document.getElementById("background").style.filter = "brightness(100%)";
+}
+
+//Displays the color code buttons by sliding them to the left
+
+function displayColors(){
+    let colors = document.getElementById("colors");
+    if(colors.style.left == "10%") {
+        colors.style.left = "0%";
+        colors.classList.remove("hidden");
+        colors.classList.add("visible");
+    } else {
+        colors.style.left = "10%";
+        colors.classList.remove("visible");
+        colors.classList.add("hidden");
+    }
 }
