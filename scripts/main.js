@@ -97,6 +97,7 @@ mymap.addEventListener('click', e => {
 // Store the location data from the API into locationInformation
 
 function storeLocationData() {
+    locationInformation = [];
     fetch(locationAPI)
         .then(function (answer) {
             return answer.json();
@@ -117,10 +118,7 @@ function storeLocationData() {
 // Reload the locations from the API
 
 function resetLocationData() {
-    ships.clearLayers();
-    let locationInformation = [];
     storeLocationData();
-    catchMetadata();
 }
 
 // Get weather data from the area where a ship currently resides from OpenWeatherMap
