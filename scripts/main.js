@@ -118,6 +118,7 @@ function storeLocationData() {
 // Reload the locations from the API
 
 function resetLocationData() {
+    ships.clearLayers();
     storeLocationData();
 }
 
@@ -473,7 +474,7 @@ function intro(){
 
 function displayColors(){
     let colors = document.getElementById("colors");
-    if(colors.style.left == "10%") {
+    if(colors.className === 'hidden') {
         colors.style.left = "0%";
         colors.classList.remove("hidden");
         colors.classList.add("visible");
