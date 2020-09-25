@@ -3,37 +3,17 @@
     padding: 0px;
 }
 
-#mapid {
-    height: 70vh;
-    width: 60vw;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px;
-    padding: 10px; 
-    margin-top: 2vh;
-    transition: 1.5s ease;
-    margin-right: 15vw;
-}
-
-#displaycolors{
-    border-radius: 4px;
-    position: absolute;
-    top: 1%;
-    left: 3%;
-    width: 4.5vw;
-    height: 4vh;
-    transition: 0.3s ease;
+body{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     background: white;
-    box-shadow: black 1px 1px 5px;
-    z-index: 1800;
-}
-
-#displaycolors:hover{
-    background: gray;
-}
-
-#displaycolors:active{
-    background: black;
-    color: white;
+    font-family: "Century Gothic";
+    transition: 1.5s ease;
+    overflow: hidden;
 }
 
 .visible{
@@ -42,6 +22,11 @@
 .hidden{
     visibility: hidden;
 }
+
+/* ===================================================================================*/
+/* ============================== Header portion begins ==============================*/
+/* ===================================================================================*/
+
 #uppersection{
     display: flex;
     flex-flow: row wrap;
@@ -63,7 +48,7 @@
     transition: 1.5s ease;
 }
 
-#first{
+#upperPart{
     width: 100%;
     height: 100px;
     display: flex;
@@ -75,16 +60,73 @@
     transition: 1.5s ease;
 }
 
-.button{
-    margin-top: 1vh;
+#srch{
+    margin-top: 15px;
+    padding: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    border-radius: 10px;
+    width: 30%;
+    height: 35%;
 }
+
+#select{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#search{
+    height: 100%;
+    width: 40px;
+    font-family: "Century Gothic";
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    transition: 0.3s ease;
+    margin: 0px;
+    background: #E8E8E8;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+#srchicon{
+    transition: 0.5s ease;
+    opacity: 0.5;
+}
+
+#search:hover #srchicon{
+    opacity: 1;
+}
+
+#searchBar{
+    outline-style: none;
+    width: 83%;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    border-style: none;
+    background: #E8E8E8;
+    transition: 0.6s ease;
+    padding: 0 20px;
+}
+
+input[type=radio]{
+    margin-right: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
 
 #resetLocation{
     color: black;
     transition: 1.5s ease;
 }
 
-#second{
+#lowerPart{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -94,6 +136,10 @@
     margin: 0px;
     height: 2vh;
     transition: 1.5s ease;
+}
+
+.button{
+    margin-top: 1vh;
 }
 
 button {
@@ -118,33 +164,25 @@ button {
     flex-flow: row wrap;
 }
 
-#switch{
+#checkbox{
     cursor: pointer;
     height: 2vh;
     width: 1.5vw;
-    background-color: gray;
 }
 
-#switch:hover {
-    background-color: red;
-    
-}
 #darkmode{
     margin-left: 10px;
 }
 
-body{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: white;
-    font-family: "Century Gothic";
-    transition: 1.5s ease;
-    overflow: hidden;
-}
+/* =================================================================================*/
+/* ============================== Header portion ends ==============================*/
+/* =================================================================================*/
+
+
+
+/* =================================================================================*/
+/* ============================== Main portion begins ==============================*/
+/* =================================================================================*/
 
 #midsection{
     display: flex;
@@ -159,6 +197,17 @@ body{
     background-position: center;
     background-size: cover;
     overflow-y: hidden;
+}
+
+#mapid {
+    height: 70vh;
+    width: 60vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px;
+    padding: 10px;
+    margin-top: 2vh;
+    transition: 1.5s ease;
+    margin-right: 15vw;
 }
 
 #colorbutton{
@@ -206,12 +255,6 @@ body{
 #colorbutton2:hover #colorText{
     opacity: 0;
 }
-#colorText{
-    opacity: 1;
-    position: relative;
-    bottom: 50%;
-    font-size: 1vw;
-}
 
 #colorbutton2:hover{
     background: ghostwhite;
@@ -222,21 +265,30 @@ body{
     color: white;
 }
 
+#colorText{
+    opacity: 1;
+    position: relative;
+    bottom: 50%;
+    font-size: 1vw;
+}
+
 #background{
     position: absolute;
-    top: 0%;
-    z-index: 0;
+    bottom: 0%;
+    z-index: -5;
     width: 100%;
     transition: 1.5s ease;
     opacity: 1;
 }
 #background2{
     position: absolute;
-    bottom: -20%;
+    bottom: 0%;
     width: 100%;
     transition: 1.5s ease;
     opacity: 0;
+    z-index: -5;
 }
+
 #colors{
     display: flex;
     flex-flow: column wrap;
@@ -254,66 +306,6 @@ body{
     padding-bottom: 8px;
     padding-top: 8px;
     padding-left: 10px;
-}
-
-#srch{
-    margin-top: 15px;
-    padding: 0px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    color: white;
-    border-radius: 10px;
-    width: 30%;
-    height: 35%;
-}
-
-#select{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-#search{
-    height: 100%;
-    width: 40px;
-    font-family: "Century Gothic";
-    border-bottom-right-radius: 25px;
-    border-top-right-radius: 25px;
-    transition: 0.3s ease;
-    margin: 0px;
-    background: #E8E8E8;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;   
-}
-#srchicon{
-    transition: 0.5s ease;
-    opacity: 0.5;
-}
-
-#search:hover #srchicon{
-    opacity: 1;
-}
-
-#searchBar{
-    outline-style: none;
-    width: 83%;
-    border-bottom-left-radius: 25px;
-    border-top-left-radius: 25px;
-    border-style: none;
-    background: #E8E8E8;
-    transition: 0.6s ease;
-    padding: 0 20px;
-}
-
-input[type=radio]{
-    margin-right: 20px;
-    margin-left: 20px;
-    cursor: pointer;
 }
 
 .color{
@@ -353,12 +345,9 @@ input[type=radio]{
     color: black;
 }
 
-
 #vari3{
     background: green;
 }
-
-
 
 #vari4{
     background: white;
@@ -396,13 +385,6 @@ input[type=radio]{
 #vari11{
     background: darkslategray;
     color: white;
-    font-size: 1.2vh;
-
-}
-#vari11:active{
-    font-size: 1vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #vari12{
@@ -427,9 +409,16 @@ input[type=radio]{
     background: slategrey;
 }
 
-#mobileReset{
-    visibility: hidden;
-}
+/* ===============================================================================*/
+/* ============================== Main portion ends ==============================*/
+/* ===============================================================================*/
+
+
+
+
+/* ================================================================================================*/
+/* ============================== Introduction screen portion starts ==============================*/
+/* ================================================================================================*/
 
 #intro{
     display: flex;
@@ -528,6 +517,17 @@ input[type=radio]{
     transition: 1.5s;
 }
 
+/* ==============================================================================================*/
+/* ============================== Introduction screen portion ends ==============================*/
+/* ==============================================================================================*/
+
+
+
+
+/* ==========================================================================================================*/
+/* ============================== Media queries to make the website responsive ==============================*/
+/* ==========================================================================================================*/
+
 @media (min-width: 2000px) and (min-height: 1000px){
     #first{
         margin-top: 30px;
@@ -579,7 +579,7 @@ input[type=radio]{
         flex-flow: column wrap;
         height: 20%;
     }
-    #first {
+    #upperPart {
         position: absolute;
         top: 7vh;
     }
@@ -607,7 +607,7 @@ input[type=radio]{
     #search{
         height: 3vh;
     }
-    #second{
+    #lowerPart{
         position: absolute;
         top: 16vh;
         left: 4vw;

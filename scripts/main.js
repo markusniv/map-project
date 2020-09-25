@@ -425,14 +425,14 @@ function showOthers(type, type2, typeName, typeColor) {
 // Handling Dark Mode setting
 
 function changeMode() {
-    let darkmode = document.getElementById("switch");
+    let darkmode = document.getElementById("checkbox");
     if (darkmode.checked) {
         document.body.style.backgroundColor = "#181818";
         document.getElementById("uppersection").style.backgroundColor = "#181818";
         document.getElementById("uppersection").style.color = "white";
         document.getElementById("uppersection").style.boxShadow = "white 1px 1px 30px";
         document.getElementById("all").style.color = "white";
-        document.getElementById("second").style.color = "white";
+        document.getElementById("lowerPart").style.color = "white";
         document.getElementById("logo").src = "images/whitelogo.png";
         document.getElementById("background").style.opacity = 0;
         document.getElementById("background2").style.opacity = 1;
@@ -445,7 +445,7 @@ function changeMode() {
         document.getElementById("uppersection").style.backgroundColor = "white";
         document.getElementById("uppersection").style.boxShadow = "black 2px 2px 60px";
         document.getElementById("all").style.color = "black";
-        document.getElementById("second").style.color = "black";
+        document.getElementById("lowerPart").style.color = "black";
         document.getElementById("logo").src = "images/logo.png";
         document.getElementById("background").style.opacity = 1;
         document.getElementById("background2").style.opacity = 0;
