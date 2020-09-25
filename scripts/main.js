@@ -426,11 +426,12 @@ function showOthers(type, type2, typeName, typeColor) {
 
 function changeMode() {
     let darkmode = document.getElementById("checkbox");
+    let uppersection = document.getElementById("upperSection");
     if (darkmode.checked) {
         document.body.style.backgroundColor = "#181818";
-        document.getElementById("uppersection").style.backgroundColor = "#181818";
-        document.getElementById("uppersection").style.color = "white";
-        document.getElementById("uppersection").style.boxShadow = "white 1px 1px 30px";
+        uppersection.style.backgroundColor = "#181818";
+        uppersection.style.color = "white";
+        uppersection.style.boxShadow = "white 1px 1px 30px";
         document.getElementById("all").style.color = "white";
         document.getElementById("lowerPart").style.color = "white";
         document.getElementById("logo").src = "images/whitelogo.png";
@@ -439,11 +440,10 @@ function changeMode() {
         document.getElementById("mapid").style.filter = "brightness(70%)";
         document.getElementById("filters").style.filter = "brightness(70%)";
         document.getElementById("resetLocation").style.color = "white";
-
     } else {
         document.body.style.backgroundColor = "white";
-        document.getElementById("uppersection").style.backgroundColor = "white";
-        document.getElementById("uppersection").style.boxShadow = "black 2px 2px 60px";
+        uppersection.style.backgroundColor = "white";
+        uppersection.style.boxShadow = "black 2px 2px 60px";
         document.getElementById("all").style.color = "black";
         document.getElementById("lowerPart").style.color = "black";
         document.getElementById("logo").src = "images/logo.png";

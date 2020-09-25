@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Shiptracker</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin=""/>
@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="new.css">
 </head>
 <body>
-    <header id="uppersection">
+    <header id="upperSection">
         <section id="upperPart">
             <img id="logo" src="images/logo.png" alt="Shiptracker logo">
-            <div id="srch">
+            <div id="searchSection">
                 <input type="text" name="search" id="searchBar" placeholder="Search by..">
-                <button id="search"><img id="srchicon" src="images/magnifyingglass.png" width="20px" height="20px"></button>
+                <button id="search"><img id="searchIcon" src="images/magnifyingglass.png" width="20px" height="20px"></button>
             </div>
-            <button class="button" id="all" onclick="showAll()">Show all</button><button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
+            <button class="button" id="showAll" onclick="showAll()">Show all</button><button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
         </section>
         <section id="lowerPart">
             <input type="radio" id="shipName" name="searchType" value="shipName" checked="checked">
@@ -32,28 +32,28 @@
             </div>
         </section>
     </header>
-    <main id="midsection">
+    <main id="midSection">
         <section id="filters">
-            <button id="filterButton" onclick="displayColors()"><img src="images/arrow.png" id="arrow" width="45vw">
-                <p id="colorText">Filters</p>
+            <button id="displayFilters" onclick="displayColors()"><img src="images/arrow.png" id="arrow" width="45vw">
+                <p id="filterTxt">Filters</p>
             </button>
                 <div id="colors" class="hidden">
-                    <button id="vari1" class="color" onclick="showExact(30, null, 'fishing', 'blue')">Fishing</button>
-                    <button id="vari2" class="color" onclick="showBoth(31, 32, 'towing', 'yellow')">Towing</button>
-                    <button id="vari3" class="color" onclick="showExact(35, null, 'military', 'green')">Military</button>
-                    <button id="vari4" class="color" onclick="showExact(36, null, 'sailing', 'white')">Sailing</button>
-                    <button id="vari5" class="color" onclick="showExact(37, null, 'pleasure craft', 'white')">Pleasure craft</button>
-                    <button id="vari6" class="color" onclick="showInBetween(40, 50, 'high speed craft', 'crimson')">High speed craft</button>
-                    <button id="vari7" class="color" onclick="showExact(50, null, 'pilot vessel', 'orange')">Pilot vessel</button>
-                    <button id="vari8" class="color" onclick="showExact(51, null, 'search and rescue', 'darkkhaki')">Search & rescue</button>
-                    <button id="vari9" class="color" onclick="showExact(52, null, 'tug', 'yellow')">Tug</button>
-                    <button id="vari10" class="color" onclick="showExact(53, null, 'port tender', 'magenta')">Port tender</button>
-                    <button id="vari11" class="color" onclick="showExact(54, null, 'Anti-pollution equipment', 'darkslategray')">Anti-pollution</button>
-                    <button id="vari12" class="color" onclick="showExact(55, null, 'law enforcement', 'darkblue')">Law enforcement</button>
-                    <button id="vari13" class="color" onclick="showInBetween(60, 70, 'passenger', 'red')">Passenger</button>
-                    <button id="vari14" class="color" onclick="showInBetween(70, 80, 'cargo', 'brown')">Cargo</button>
-                    <button id="vari15" class="color" onclick="showInBetween(80, 90, 'tanker', 'black')">Tanker</button>
-                    <button id="vari16" class="color" onclick="showOthers(30, 90, 'other', 'slategray')">Other</button>
+                    <button id="color1" class="color" onclick="showExact(30, null, 'fishing', 'blue')">Fishing</button>
+                    <button id="color2" class="color" onclick="showBoth(31, 32, 'towing', 'yellow')">Towing</button>
+                    <button id="color3" class="color" onclick="showExact(35, null, 'military', 'green')">Military</button>
+                    <button id="color4" class="color" onclick="showExact(36, null, 'sailing', 'white')">Sailing</button>
+                    <button id="color5" class="color" onclick="showExact(37, null, 'pleasure craft', 'white')">Pleasure craft</button>
+                    <button id="color6" class="color" onclick="showInBetween(40, 50, 'high speed craft', 'crimson')">High speed craft</button>
+                    <button id="color7" class="color" onclick="showExact(50, null, 'pilot vessel', 'orange')">Pilot vessel</button>
+                    <button id="color8" class="color" onclick="showExact(51, null, 'search and rescue', 'darkkhaki')">Search & rescue</button>
+                    <button id="color9" class="color" onclick="showExact(52, null, 'tug', 'yellow')">Tug</button>
+                    <button id="color10" class="color" onclick="showExact(53, null, 'port tender', 'magenta')">Port tender</button>
+                    <button id="color11" class="color" onclick="showExact(54, null, 'Anti-pollution equipment', 'darkslategray')">Anti-pollution</button>
+                    <button id="color12" class="color" onclick="showExact(55, null, 'law enforcement', 'darkblue')">Law enforcement</button>
+                    <button id="color13" class="color" onclick="showInBetween(60, 70, 'passenger', 'red')">Passenger</button>
+                    <button id="color14" class="color" onclick="showInBetween(70, 80, 'cargo', 'brown')">Cargo</button>
+                    <button id="color15" class="color" onclick="showInBetween(80, 90, 'tanker', 'black')">Tanker</button>
+                    <button id="color16" class="color" onclick="showOthers(30, 90, 'other', 'slategray')">Other</button>
                 </div>
         </section>
         <div id="mapid">

@@ -27,7 +27,7 @@ body{
 /* ============================== Header portion begins ==============================*/
 /* ===================================================================================*/
 
-#uppersection{
+#upperSection{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -60,7 +60,7 @@ body{
     transition: 1.5s ease;
 }
 
-#srch{
+#searchSection{
     margin-top: 15px;
     padding: 0px;
     display: flex;
@@ -94,12 +94,12 @@ body{
     align-content: center;
     align-items: center;
 }
-#srchicon{
+#searchIcon{
     transition: 0.5s ease;
     opacity: 0.5;
 }
 
-#search:hover #srchicon{
+#search:hover #searchIcon{
     opacity: 1;
 }
 
@@ -184,7 +184,7 @@ button {
 /* ============================== Main portion begins ==============================*/
 /* =================================================================================*/
 
-#midsection{
+#midSection{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -223,7 +223,7 @@ button {
     transition: 1s;
 }
 
-#filterButton{
+#displayFilters{
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
@@ -248,24 +248,24 @@ button {
     position: relative;
     transition: 0.7s;
 }
-#filterButton:hover #arrow{
+#displayFilters:hover #arrow{
     opacity: 1;
 }
 
-#filterButton:hover #colorText{
+#displayFilters:hover #filterTxt{
     opacity: 0;
 }
 
-#filterButton:hover{
+#displayFilters:hover{
     background: ghostwhite;
 }
 
-#filterButton:active{
+#displayFilters:active{
     background: black;
     color: white;
 }
 
-#colorText{
+#filterTxt{
     opacity: 1;
     position: relative;
     bottom: 50%;
@@ -330,78 +330,66 @@ button {
     filter:brightness(80%);
 }
 
-#vari1{
+/* ============= defining all filter button colors below ===============*/
+#color1{
     background: blue;
 }
-
-#vari2{
+#color2{
     background: yellow;
     color: black;
 }
-
-#vari3{
+#color3{
     background: green;
 }
-
-#vari4{
+#color4{
     background: white;
     color: black;
 }
-
-#vari5{
+#color5{
     background: white;
     color: black;
 }
-
-#vari6{
+#color6{
     background: crimson;
 }
-
-#vari7{
+#color7{
     background: orange;
     color: white;
 }
-
-#vari8 {
+#color8 {
     background: darkkhaki;
 }
-
-#vari9{
+#color9{
     background: yellow;
     color: black;
 }
-
-#vari10{
+#color10{
     background: magenta;
     color: white;
 }
-
-#vari11{
+#color11{
     background: darkslategray;
     color: white;
 }
-
-#vari12{
+#color12{
     background: darkblue;
     color: white;
 }
-
-#vari13{
+#color13{
     background: red;
 }
-
-#vari14{
+#color14{
     background: brown;
 }
-
-#vari15{
+#color15{
     background: black;
     color: white;
 }
-
-#vari16{
+#color16{
     background: slategrey;
 }
+/* ===================== color defining ends ========================*/
+
 
 /* ===============================================================================*/
 /* ============================== Main portion ends ==============================*/
@@ -465,6 +453,7 @@ button {
 }
 
 @keyframes blink{
+    /* Intro button blinking animation */
     0% {
         background-color: #E8E8E8;
     }
@@ -530,10 +519,10 @@ button {
 
 @media (max-width: 1700px) {
 
-    #srch{
+    #searchSection{
         width: 50%;
     }
-    #uppersection{
+    #upperSection{
         height: 140px;
     }
     .button{
@@ -562,14 +551,14 @@ button {
         width: 16%;
     }
 
-    #filterButton{
+    #displayFilters{
         left: 13%;
         width: 5vw;
     }
 }
 
 @media (max-width: 1000px) {
-    #uppersection{
+    #upperSection{
         flex-flow: column wrap;
         height: 20%;
     }
@@ -577,7 +566,7 @@ button {
         position: absolute;
         top: 7vh;
     }
-    #midsection{
+    #midSection{
         flex-flow: column wrap;
     }
     #logo{
@@ -590,7 +579,7 @@ button {
     #background2{
         visibility: hidden;
     }
-    #srch{
+    #searchSection{
         position: absolute;
         top: 5vh;
         width: 50%;
@@ -629,7 +618,7 @@ button {
     .color{
         height: 15%;
     }
-    #filterButton{
+    #displayFilters{
         visibility: hidden;
     }
     #filters{
