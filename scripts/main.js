@@ -437,7 +437,7 @@ function changeMode() {
         document.getElementById("background").style.opacity = 0;
         document.getElementById("background2").style.opacity = 1;
         document.getElementById("mapid").style.filter = "brightness(70%)";
-        document.getElementById("colorbutton").style.filter = "brightness(70%)";
+        document.getElementById("filters").style.filter = "brightness(70%)";
         document.getElementById("resetLocation").style.color = "white";
 
     } else {
@@ -450,7 +450,7 @@ function changeMode() {
         document.getElementById("background").style.opacity = 1;
         document.getElementById("background2").style.opacity = 0;
         document.getElementById("mapid").style.filter = "brightness(100%)";
-        document.getElementById("colorbutton").style.filter = "brightness(100%)";
+        document.getElementById("filters").style.filter = "brightness(100%)";
         document.getElementById("resetLocation").style.color = "black";
     }
 }
@@ -473,7 +473,7 @@ function intro(){
 //Displays the color code buttons by sliding them to the left
 
 function displayColors(){
-    let colorbutton = document.getElementById("colorbutton");
+    let colorbutton = document.getElementById("filters");
     let colors = document.getElementById("colors");
     let arrow = document.getElementById("arrow");
     if(colors.className === 'hidden') {

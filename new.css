@@ -210,7 +210,7 @@ button {
     margin-right: 15vw;
 }
 
-#colorbutton{
+#filters{
     display: flex;
     flex-flow: row wrap;
     align-content: center;
@@ -223,7 +223,7 @@ button {
     transition: 1s;
 }
 
-#colorbutton2{
+#filterButton{
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
@@ -248,19 +248,19 @@ button {
     position: relative;
     transition: 0.7s;
 }
-#colorbutton2:hover #arrow{
+#filterButton:hover #arrow{
     opacity: 1;
 }
 
-#colorbutton2:hover #colorText{
+#filterButton:hover #colorText{
     opacity: 0;
 }
 
-#colorbutton2:hover{
+#filterButton:hover{
     background: ghostwhite;
 }
 
-#colorbutton2:active{
+#filterButton:active{
     background: black;
     color: white;
 }
@@ -332,12 +332,6 @@ button {
 
 #vari1{
     background: blue;
-}
-
-#vari1:active{
-    font-size: 1.4vh;
-    box-shadow: black 2px 2px 2px;
-    width: 96%;
 }
 
 #vari2{
@@ -564,11 +558,11 @@ button {
     #continue{
         font-size: 1vw;
     }
-    #colorbutton{
+    #filters{
         width: 16%;
     }
 
-    #colorbutton2{
+    #filterButton{
         left: 13%;
         width: 5vw;
     }
@@ -635,10 +629,10 @@ button {
     .color{
         height: 15%;
     }
-    #colorbutton2{
+    #filterButton{
         visibility: hidden;
     }
-    #colorbutton{
+    #filters{
         position: absolute;
         height: 90%;
         bottom: 5%;
