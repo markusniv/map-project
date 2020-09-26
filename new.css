@@ -243,8 +243,9 @@ button {
     height: 80%;
     width: 15%;
     position: relative;
+    bottom: 2.5%;
     left: 10%;
-    transition: 1s;
+    transition: 0.8s;
 }
 
 /* Filter button section */

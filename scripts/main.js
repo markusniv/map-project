@@ -473,16 +473,16 @@ function intro(){
 //Displays the color code buttons by sliding them to the left
 
 function displayColors(){
-    let colorbutton = document.getElementById("filters");
+    let filters = document.getElementById("filters");
     let colors = document.getElementById("colors");
     let arrow = document.getElementById("arrow");
     if(colors.className === 'hidden') {
-        colorbutton.style.left = "0%";
+        filters.style.left = "-1%";
         colors.classList.remove("hidden");
         colors.classList.add("visible");
         arrow.style.webkitTransform = "rotate(180deg)";
     } else {
-        colorbutton.style.left = "10%";
+        filters.style.left = "10%";
         colors.classList.remove("visible");
         colors.classList.add("hidden");
         arrow.style.webkitTransform = "rotate(0deg)";
