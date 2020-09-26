@@ -474,7 +474,6 @@ button {
     #search{ height: 3vh; }
     #displaycolors{ visibility: hidden; }
     #startlogo{ width: 80vw; }
-    #cover{ visibility: hidden; }
     #intro{ visibility: hidden; }
     #resetLocation{ margin-left: 15vw; }
     #displayFilters{ visibility: hidden; }
