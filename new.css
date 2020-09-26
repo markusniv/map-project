@@ -450,9 +450,7 @@ button {
 /* ==========================================================================================================*/
 
 @media (min-width: 2000px) and (min-height: 1000px){
-    #first{
-        margin-top: 30px;
-    }
+    #first{ margin-top: 30px; }
 }
 
 /* ==== settings for a laptop-sized screen ==== */
