@@ -200,6 +200,7 @@ button {
     overflow: hidden;
 }
 
+
 /* background images */
 #background{
     position: absolute;
@@ -248,13 +249,14 @@ button {
     transition: 0.8s;
 }
 
+
 /* Filter button section */
 #displayFilters{
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
     align-items: center;
-    background: white;
+    background-image: linear-gradient(to left, #DCDCDC, #F5F5F5);
     border: black solid 2px;
     -webkit-transform: rotate(-90deg);
     width: 4vw;
@@ -279,11 +281,9 @@ button {
 #displayFilters:hover #filterTxt{
     opacity: 0;
 }
-#displayFilters:hover{
-    background: ghostwhite;
-}
+
 #displayFilters:active{
-    background: black;
+    background-image: linear-gradient(to right, #696969, #909090);
     color: white;
 }
 #filterTxt{
@@ -293,6 +293,7 @@ button {
     font-size: 1vw;
 }
 /* Filter button section */
+
 
 #colors{
     display: flex;
@@ -305,7 +306,7 @@ button {
     width: 10vw;
     margin-top: 2vh;
     transition: 0.6s;
-    background-color: white;
+    background-image: linear-gradient(to bottom, #C8C8C8, #DCDCDC, #F5F5F5);
     border-radius: 10px;
     padding-bottom: 8px;
     padding-top: 8px;
@@ -372,12 +373,12 @@ button {
     top: 0%;
     left: 0%;
     color: white;
-    background: white;
     opacity: 1;
     height: 100vh;
     width: 100vw;
     z-index: 2000;
-    transition: 1.5s;
+    transition: 2s;
+    background-image: linear-gradient(to top, #505050, #F0F0F0, #909090, #505050);
 }
 
 #intro2{
@@ -426,17 +427,6 @@ button {
     80%{ background-color: #C8C8C8; }
     90%{ background-color: #D8D8D8; }
     100%{ background-color: #E8E8E8; }
-}
-
-#cover{
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    background: #181818;
-    z-index: 1900;
-    transition: 1.5s;
 }
 
 /* ==============================================================================================*/

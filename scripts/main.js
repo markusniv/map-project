@@ -459,15 +459,12 @@ function changeMode() {
 
 function removeStartScreen(){
     document.getElementById("intro").remove();
-    document.getElementById("cover").remove();
 }
 
 function intro(){
     let intro = document.getElementById("intro");
-    intro.style.top = "-100%";
-    intro.style.opacity = "0.9";
-    document.getElementById("cover").style.left = "100%";
-    setTimeout(removeStartScreen, 1500);
+    intro.style.opacity = "0";
+    setTimeout(removeStartScreen, 2000);
 }
 
 //Displays the color code buttons by sliding them to the left
