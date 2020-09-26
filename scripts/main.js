@@ -4,6 +4,7 @@ let metadataInformation = [];
 let circleInformation = [];
 let locationAPI = 'https://meri.digitraffic.fi/api/v1/locations/latest';
 let metadataAPI = 'https://meri.digitraffic.fi/api/v1/metadata/vessels';
+let weatherIcon = 'http://openweathermap.org/img/wn/';
 
 let mymap = L.map('mapid').setView([61.924110, 25.748152], 5);
 
@@ -139,9 +140,10 @@ function getWeatherData(lat, lon) {
 function printWeatherData(json, latlng) {
     let popup = L.popup()
         .setLatLng(latlng)
-        .setContent(`General weather: ${json.weather[0].main}
+        .setContent(`<p class="popupTextBox"><img src="${weatherIcon}${json.weather[0].icon}.png"><br>
+                 <br>General weather: ${json.weather[0].main}
                  <br>Temperature: ${(+json.main.temp - 273.15).toFixed(1)} 'C
-                 <br>Wind speed: ${json.wind.speed} m/s`)
+                 <br>Wind speed: ${json.wind.speed} m/s</p>`)
         .openOn(mymap);
     console.log("General weather: " + json.weather[0].main);
     console.log("Temperature: " + (+json.main.temp - 273.15).toFixed(1) + ` 'C`);
@@ -266,18 +268,18 @@ function catchMetadata(type, type2, typeName, typeColor) {
             destination = destinationArray[1];
         }
 
-        circle.bindPopup(`Ship name: ${name}
+        circle.bindPopup(`<p class="popupTextBox">Ship name: ${name}
                                 <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
                                 <br>Ship type: ${shipTypeString}
                                 <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
-                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>`);
+                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button></p>`);
         circleInformation.push({
             'shipMMSI' : locationInformation[shipMMSI].mmsi,
-            'popUp' : `Ship name: ${name}
+            'popUp' : `<p class="popupTextBox">Ship name: ${name}
                                 <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
                                 <br>Ship type: ${shipTypeString}
                                 <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
-                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>`
+                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button></p>`
 
         });
 
