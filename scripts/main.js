@@ -432,7 +432,7 @@ function changeMode() {
         uppersection.style.backgroundColor = "#181818";
         uppersection.style.color = "white";
         uppersection.style.boxShadow = "white 1px 1px 30px";
-        document.getElementById("all").style.color = "white";
+        document.getElementById("showAll").style.color = "white";
         document.getElementById("lowerPart").style.color = "white";
         document.getElementById("logo").src = "images/whitelogo.png";
         document.getElementById("background").style.opacity = 0;
@@ -444,7 +444,7 @@ function changeMode() {
         document.body.style.backgroundColor = "white";
         uppersection.style.backgroundColor = "white";
         uppersection.style.boxShadow = "black 2px 2px 60px";
-        document.getElementById("all").style.color = "black";
+        document.getElementById("showAll").style.color = "black";
         document.getElementById("lowerPart").style.color = "black";
         document.getElementById("logo").src = "images/logo.png";
         document.getElementById("background").style.opacity = 1;

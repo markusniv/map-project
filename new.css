@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: "Century Gothic";
 }
 
 body{
@@ -11,7 +12,6 @@ body{
     width: 100%;
     height: 100%;
     background: white;
-    font-family: "Century Gothic";
     transition: 1.5s ease;
     overflow: hidden;
 }
@@ -47,7 +47,7 @@ body{
     margin-right: 2vh;
     transition: 1.5s ease;
 }
-
+/* ==== upper portion of the uppersection ==== */
 #upperPart{
     width: 100%;
     height: 100px;
@@ -82,7 +82,6 @@ body{
 #search{
     height: 100%;
     width: 40px;
-    font-family: "Century Gothic";
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
     transition: 0.3s ease;
@@ -120,12 +119,14 @@ input[type=radio]{
     cursor: pointer;
 }
 
-
 #resetLocation{
     color: black;
     transition: 1.5s ease;
 }
+/* ==== upper portion of the uppersection ==== */
 
+
+/* ==== lower portion of the uppersection ==== */
 #lowerPart{
     display: flex;
     flex-flow: row wrap;
@@ -149,7 +150,6 @@ button {
     outline-style: none;
     border-style: none;
     background: transparent;
-    font-family: "Century Gothic";
     font-size: 1.5vh;
     font-weight: bolder;
     cursor: pointer;
@@ -173,6 +173,7 @@ button {
 #darkmode{
     margin-left: 10px;
 }
+/* ==== lower portion of the uppersection ==== */
 
 /* =================================================================================*/
 /* ============================== Header portion ends ==============================*/
@@ -196,9 +197,30 @@ button {
     height: 85vh;
     background-position: center;
     background-size: cover;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
+/* background images */
+#background{
+    position: absolute;
+    bottom: 0%;
+    z-index: -5;
+    width: 100%;
+    transition: 1.5s ease;
+    opacity: 1;
+}
+#background2{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    transition: 1.5s ease;
+    opacity: 0;
+    z-index: -5;
+}
+/* background images */
+
+
+/* map settings */
 #mapid {
     height: 70vh;
     width: 60vw;
@@ -209,11 +231,13 @@ button {
     transition: 1.5s ease;
     margin-right: 15vw;
 }
+/* map settings */
 
+
+/* ==== filter section ==== */
 #filters{
     display: flex;
     flex-flow: row wrap;
-    align-content: center;
     align-items: center;
     justify-content: center;
     height: 80%;
@@ -223,6 +247,7 @@ button {
     transition: 1s;
 }
 
+/* Filter button section */
 #displayFilters{
     display: flex;
     flex-flow: column nowrap;
@@ -242,7 +267,6 @@ button {
     height: 8vh;
     left: 15%;
 }
-
 #arrow{
     opacity: 0;
     position: relative;
@@ -251,43 +275,23 @@ button {
 #displayFilters:hover #arrow{
     opacity: 1;
 }
-
 #displayFilters:hover #filterTxt{
     opacity: 0;
 }
-
 #displayFilters:hover{
     background: ghostwhite;
 }
-
 #displayFilters:active{
     background: black;
     color: white;
 }
-
 #filterTxt{
     opacity: 1;
     position: relative;
     bottom: 50%;
     font-size: 1vw;
 }
-
-#background{
-    position: absolute;
-    bottom: 0%;
-    z-index: -5;
-    width: 100%;
-    transition: 1.5s ease;
-    opacity: 1;
-}
-#background2{
-    position: absolute;
-    bottom: 0%;
-    width: 100%;
-    transition: 1.5s ease;
-    opacity: 0;
-    z-index: -5;
-}
+/* Filter button section */
 
 #colors{
     display: flex;
@@ -296,7 +300,6 @@ button {
     position: relative;
     left: 10%;
     align-items: center;
-    align-content: center;
     height: 68vh;
     width: 10vw;
     margin-top: 2vh;
@@ -330,66 +333,23 @@ button {
     filter:brightness(80%);
 }
 
-/* ============= defining all filter button colors below ===============*/
-#color1{
-    background: blue;
-}
-#color2{
-    background: yellow;
-    color: black;
-}
-#color3{
-    background: green;
-}
-#color4{
-    background: white;
-    color: black;
-}
-#color5{
-    background: white;
-    color: black;
-}
-#color6{
-    background: crimson;
-}
-#color7{
-    background: orange;
-    color: white;
-}
-#color8 {
-    background: darkkhaki;
-}
-#color9{
-    background: yellow;
-    color: black;
-}
-#color10{
-    background: magenta;
-    color: white;
-}
-#color11{
-    background: darkslategray;
-    color: white;
-}
-#color12{
-    background: darkblue;
-    color: white;
-}
-#color13{
-    background: red;
-}
-#color14{
-    background: brown;
-}
-#color15{
-    background: black;
-    color: white;
-}
-#color16{
-    background: slategrey;
-}
-/* ===================== color defining ends ========================*/
-
+#color1{ background: blue; }
+#color2{ background: yellow; color: black; }
+#color3{ background: green; }
+#color4{ background: white; color: black; }
+#color5{ background: white; color: black; }
+#color6{ background: crimson; }
+#color7{ background: orange; color: white; }
+#color8{ background: darkkhaki; }
+#color9{ background: yellow;color: black; }
+#color10{ background: magenta; color: white; }
+#color11{ background: darkslategray; color: white; }
+#color12{ background: darkblue; color: white; }
+#color13{ background: red; }
+#color14{ background: brown; }
+#color15{ background: black; color: white; }
+#color16{ background: slategrey; }
+/* ==== filter section ==== */
 
 /* ===============================================================================*/
 /* ============================== Main portion ends ==============================*/
@@ -399,7 +359,7 @@ button {
 
 
 /* ================================================================================================*/
-/* ============================== Introduction screen portion starts ==============================*/
+/* ============================== Introduction screen portion begins ==============================*/
 /* ================================================================================================*/
 
 #intro{
@@ -454,39 +414,17 @@ button {
 
 @keyframes blink{
     /* Intro button blinking animation */
-    0% {
-        background-color: #E8E8E8;
-    }
-    10%{
-        background-color: #D8D8D8;
-    }
-    20%{
-        background-color: #C8C8C8;
-    }
-    30%{
-        background-color: #B0B0B0;
-    }
-    40%{
-        background-color: #A0A0A0;
-    }
-    50%{
-        background-color: #888888;
-    }
-    60%{
-        background-color: #A0A0A0;
-    }
-    70%{
-        background-color: #B0B0B0;
-    }
-    80%{
-        background-color: #C8C8C8;
-    }
-    90%{
-        background-color: #D8D8D8;
-    }
-    100%{
-        background-color: #E8E8E8;
-    }
+    0% { background-color: #E8E8E8; }
+    10%{ background-color: #D8D8D8; }
+    20%{ background-color: #C8C8C8; }
+    30%{ background-color: #B0B0B0; }
+    40%{ background-color: #A0A0A0; }
+    50%{ background-color: #888888; }
+    60%{ background-color: #A0A0A0; }
+    70%{ background-color: #B0B0B0; }
+    80%{ background-color: #C8C8C8; }
+    90%{ background-color: #D8D8D8; }
+    100%{ background-color: #E8E8E8; }
 }
 
 #cover{
@@ -517,88 +455,48 @@ button {
     }
 }
 
+/* ==== settings for a laptop-sized screen ==== */
 @media (max-width: 1700px) {
-
-    #searchSection{
-        width: 50%;
-    }
-    #upperSection{
-        height: 140px;
-    }
-    .button{
-        font-size: 2vh;
-    }
-    #searchBar{
-        width: 40vw;
-    }
-    #mapid{
-        margin-top: 5vh;
-        height: 70vh;
-    }
-    #colors{
-        margin-top: 4vh;
-    }
-    #displaycolors{
-        left: 7%;
-    }
-    #intro2{
-        font-size: 2vw;
-    }
-    #continue{
-        font-size: 1vw;
-    }
-    #filters{
-        width: 16%;
-    }
-
-    #displayFilters{
-        left: 13%;
-        width: 5vw;
-    }
+    #searchSection{ width: 50%; }
+    #upperSection{ height: 140px; }
+    .button{ font-size: 2vh; }
+    #searchBar{ width: 40vw; }
+    #mapid{ margin-top: 5vh; height: 70vh; }
+    #colors{ margin-top: 4vh; }
+    #displaycolors{ left: 7%; }
+    #intro2{ font-size: 2vw; }
+    #continue{ font-size: 1vw; }
+    #filters{ width: 16%; }
+    #displayFilters{ left: 13%; width: 5vw; }
 }
+/* ==== settings for a laptop-sized screen ==== */
 
+
+/* ==== settings for mobile screens ==== */
 @media (max-width: 1000px) {
-    #upperSection{
-        flex-flow: column wrap;
-        height: 20%;
-    }
-    #upperPart {
-        position: absolute;
-        top: 7vh;
-    }
-    #midSection{
-        flex-flow: column wrap;
-    }
-    #logo{
-        position: absolute;
-        top: -4vh;
-    }
-    #background{
-        visibility: hidden;
-    }
-    #background2{
-        visibility: hidden;
-    }
-    #searchSection{
-        position: absolute;
-        top: 5vh;
-        width: 50%;
-    }
-    #searchBar{
-        height: 3vh;
-    }
-    #search{
-        height: 3vh;
-    }
+    #upperSection{ flex-flow: column wrap; height: 20%; }
+    #upperPart { position: absolute; top: 7vh; }
+    #midSection{ flex-flow: column wrap; }
+    #logo{ position: absolute; top: -4vh; }
+    #background{ visibility: hidden; }
+    #background2{ visibility: hidden; }
+    #searchSection{ position: absolute; top: 5vh; width: 50%; }
+    #searchBar{ height: 3vh; }
+    #search{ height: 3vh; }
+    #displaycolors{ visibility: hidden; }
+    #startlogo{ width: 80vw; }
+    #cover{ visibility: hidden; }
+    #intro{ visibility: hidden; }
+    #resetLocation{ margin-left: 15vw; }
+    #displayFilters{ visibility: hidden; }
+    .color{ height: 15%; }
+    body{ background-image: url("images/mobilebackground.jpg"); }
     #lowerPart{
         position: absolute;
         top: 16vh;
         left: 4vw;
         background: transparent;
         color: black;
-    }
-    body{
-        background-image: url("images/mobilebackground.jpg");
     }
     #mapid{
         height: 40vh;
@@ -615,12 +513,6 @@ button {
         visibility: visible;
         background: transparent;
     }
-    .color{
-        height: 15%;
-    }
-    #displayFilters{
-        visibility: hidden;
-    }
     #filters{
         position: absolute;
         height: 90%;
@@ -628,19 +520,5 @@ button {
         width: 25%;
         left: 35%;
     }
-    #displaycolors{
-        visibility: hidden;
-    }
-    #startlogo{
-        width: 80vw;
-    }
-    #cover{
-        visibility: hidden;
-    }
-    #intro{
-        visibility: hidden;
-    }
-    #resetLocation{
-        margin-left: 15vw;
-    }
 }
+/* ==== settings for mobile screens ==== */
