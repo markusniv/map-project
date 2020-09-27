@@ -311,6 +311,14 @@ function addSearchMarker(i, latitude, longitude) {
     }
 }
 
+
+// Clear all layers from the map
+
+function clearMap() {
+    console.log("Clearing layers..");
+    ships.clearLayers();
+    markers.clearLayers();
+}
 // Clear markers and show all types of ships
 
 function showAll() {
@@ -330,35 +338,37 @@ function showOther(color) {
 // Handling Dark Mode setting
 
 function changeMode() {
-    let darkmode = document.getElementById("checkbox");
-    let uppersection = document.getElementById("upperSection");
-    let background = document.getElementById("background");
-    let background2 = document.getElementById("background2");
+    let darkmode = document.getElementById('checkbox');
+    let uppersection = document.getElementById('upperSection');
+    let background = document.getElementById('background');
+    let background2 = document.getElementById('background2');
     if (darkmode.checked) {
-        document.body.style.backgroundColor = "#181818";
-        uppersection.style.backgroundColor = "#181818";
-        uppersection.style.color = "white";
-        uppersection.style.boxShadow = "white 1px 1px 30px";
-        document.getElementById("showAll").style.color = "white";
-        document.getElementById("lowerPart").style.color = "white";
-        document.getElementById("logo").src = "images/whitelogo.png";
+        document.body.style.backgroundColor = '#181818';
+        uppersection.style.backgroundColor = '#181818';
+        uppersection.style.color = 'white';
+        uppersection.style.boxShadow = 'white 1px 1px 30px';
+        document.getElementById('showAll').style.color = 'white';
+        document.getElementById('lowerPart').style.color = 'white';
+        document.getElementById('clearMap').style.color = 'white';
+        document.getElementById('logo').src = 'images/whitelogo.png';
         background.style.opacity = 0;
         background2.style.opacity = 1;
-        document.getElementById("mapid").style.filter = "brightness(70%)";
-        document.getElementById("filters").style.filter = "brightness(70%)";
-        document.getElementById("resetLocation").style.color = "white";
+        document.getElementById('mapid').style.filter = 'brightness(70%)';
+        document.getElementById('filters').style.filter = 'brightness(70%)';
+        document.getElementById('resetLocation').style.color = 'white';
     } else {
-        document.body.style.backgroundColor = "white";
-        uppersection.style.backgroundColor = "white";
-        uppersection.style.boxShadow = "black 2px 2px 60px";
-        document.getElementById("showAll").style.color = "black";
-        document.getElementById("lowerPart").style.color = "black";
-        document.getElementById("logo").src = "images/logo.png";
-        document.getElementById("background").style.opacity = 1;
-        document.getElementById("background2").style.opacity = 0;
-        document.getElementById("mapid").style.filter = "brightness(100%)";
-        document.getElementById("filters").style.filter = "brightness(100%)";
-        document.getElementById("resetLocation").style.color = "black";
+        document.body.style.backgroundColor = 'white';
+        uppersection.style.backgroundColor = 'white';
+        uppersection.style.boxShadow = 'black 2px 2px 60px';
+        document.getElementById('showAll').style.color = 'black';
+        document.getElementById('lowerPart').style.color = 'black';
+        document.getElementById('clearMap').style.color = 'black';
+        document.getElementById("logo").src = 'images/logo.png';
+        document.getElementById('background').style.opacity = 1;
+        document.getElementById('background2').style.opacity = 0;
+        document.getElementById('mapid').style.filter = 'brightness(100%)';
+        document.getElementById('filters').style.filter = 'brightness(100%)';
+        document.getElementById('resetLocation').style.color = 'black';
     }
 }
 
@@ -366,29 +376,29 @@ function changeMode() {
 // intro functions
 
 function removeStartScreen(){
-    document.getElementById("intro").remove();
+    document.getElementById('intro').remove();
 }
 function intro(){
-    let intro = document.getElementById("intro");
-    intro.style.top = "-110%";
+    let intro = document.getElementById('intro');
+    intro.style.top = '-110%';
     setTimeout(removeStartScreen, 2000);
 }
 
 // Displays the color code buttons by sliding them to the left
 
 function displayColors(){
-    let filters = document.getElementById("filters");
-    let colors = document.getElementById("colors");
-    let arrow = document.getElementById("arrow");
+    let filters = document.getElementById('filters');
+    let colors = document.getElementById('colors');
+    let arrow = document.getElementById('arrow');
     if(colors.className === 'hidden') {
-        filters.style.left = "-1%";
-        colors.classList.remove("hidden");
-        colors.classList.add("visible");
-        arrow.style.webkitTransform = "rotate(180deg)";
+        filters.style.left = '-1%';
+        colors.classList.remove('hidden');
+        colors.classList.add('visible');
+        arrow.style.webkitTransform = 'rotate(180deg)';
     } else {
-        filters.style.left = "10%";
-        colors.classList.remove("visible");
-        colors.classList.add("hidden");
-        arrow.style.webkitTransform = "rotate(0deg)";
+        filters.style.left = '10%';
+        colors.classList.remove('visible');
+        colors.classList.add('hidden');
+        arrow.style.webkitTransform = 'rotate(0deg)';
     }
 }

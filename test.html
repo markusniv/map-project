@@ -19,9 +19,11 @@
                 <input type="text" name="search" id="searchBar" placeholder="Search by..">
                 <button id="search"><img id="searchIcon" src="images/magnifyingglass.png" width="20px" height="20px"></button>
             </div>
-            <button class="button" id="showAll" onclick="showAll()">Show all</button><button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
+            <button class="button" id="showAll" onclick="showAll()">Show all</button>
+            <button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
         </section>
         <section id="lowerPart">
+            <button class="button" onclick="clearMap()" id="clearMap">Clear</button>
             <input type="radio" id="shipName" name="searchType" value="shipName" checked="checked">
             <label for="shipName">Ship Name</label>
             <input type="radio" id="mmsi" name="searchType" value="mmsi">

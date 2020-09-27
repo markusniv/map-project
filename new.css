@@ -118,10 +118,11 @@ input[type=radio]{
     margin-left: 20px;
     cursor: pointer;
 }
-
-#resetLocation{
-    color: black;
-    transition: 1.5s ease;
+#showAll:hover{
+    color: #A0A0A0;
+}
+#resetLocation:hover{
+    color: #A0A0A0;
 }
 /* ==== upper portion of the uppersection ==== */
 
@@ -139,8 +140,8 @@ input[type=radio]{
     transition: 1.5s ease;
 }
 
-.button{
-    margin-top: 1vh;
+.button:hover{
+    color: gray;
 }
 
 button {
@@ -153,7 +154,7 @@ button {
     font-size: 1.5vh;
     font-weight: bolder;
     cursor: pointer;
-    transition: 1.5s ease;
+    transition: 0.2s ease;
 }
 
 #mode{
@@ -172,6 +173,14 @@ button {
 
 #darkmode{
     margin-left: 10px;
+}
+
+#clearMap{
+    height: 3vh;
+    width: 4vw;
+    position: relative;
+    top: 0vh;
+    right: 7vw;
 }
 /* ==== lower portion of the uppersection ==== */
 
@@ -487,6 +496,11 @@ button {
     #displayFilters{ visibility: hidden; }
     .color{ height: 15%; }
     body{ background-image: url("images/mobilebackground.jpg"); }
+    #clearMap{
+        position: absolute;
+        top: -5vh;
+        left: 1vw;
+    }
     #lowerPart{
         position: absolute;
         top: 16vh;
