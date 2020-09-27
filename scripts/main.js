@@ -465,7 +465,7 @@ function removeStartScreen(){
 
 function intro(){
     let intro = document.getElementById("intro");
-    intro.style.opacity = "0";
+    intro.style.top = "-110%";
     setTimeout(removeStartScreen, 2000);
 }
 

@@ -385,7 +385,8 @@ button {
     width: 100vw;
     z-index: 2000;
     transition: 2s;
-    background-image: linear-gradient(to top, #505050, #F0F0F0, #909090, #505050);
+    background-image: linear-gradient(to top, #F0F0F0, #909090);
+    box-shadow: #888888 2px 2px 60px;
 }
 
 #intro2{
