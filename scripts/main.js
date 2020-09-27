@@ -304,7 +304,7 @@ function addSearchMarker(i, latitude, longitude) {
             let circle = L.circle([latitude, longitude], {
                 color: circleInformation[p].color,
                 radius: 5,
-            }).addTo(mymap);
+            }).addTo(markers);
             circle.bindPopup(circleInformation[p].popUp);
             marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
         }
@@ -332,6 +332,8 @@ function showOther(color) {
 function changeMode() {
     let darkmode = document.getElementById("checkbox");
     let uppersection = document.getElementById("upperSection");
+    let background = document.getElementById("background");
+    let background2 = document.getElementById("background2");
     if (darkmode.checked) {
         document.body.style.backgroundColor = "#181818";
         uppersection.style.backgroundColor = "#181818";
@@ -340,8 +342,8 @@ function changeMode() {
         document.getElementById("showAll").style.color = "white";
         document.getElementById("lowerPart").style.color = "white";
         document.getElementById("logo").src = "images/whitelogo.png";
-        document.getElementById("background").style.opacity = 0;
-        document.getElementById("background2").style.opacity = 1;
+        background.style.opacity = 0;
+        background2.style.opacity = 1;
         document.getElementById("mapid").style.filter = "brightness(70%)";
         document.getElementById("filters").style.filter = "brightness(70%)";
         document.getElementById("resetLocation").style.color = "white";
@@ -360,19 +362,19 @@ function changeMode() {
     }
 }
 
-//intro function
+
+// intro functions
 
 function removeStartScreen(){
     document.getElementById("intro").remove();
 }
-
 function intro(){
     let intro = document.getElementById("intro");
     intro.style.top = "-110%";
     setTimeout(removeStartScreen, 2000);
 }
 
-//Displays the color code buttons by sliding them to the left
+// Displays the color code buttons by sliding them to the left
 
 function displayColors(){
     let filters = document.getElementById("filters");
