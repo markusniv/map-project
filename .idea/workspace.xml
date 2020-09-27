@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Changed leaflet popups into paragraphs and added styling, added use of OpenWeatherMap icons into the weather popups">
+    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Added duplicate code in the search function into its own function, addSearchMarker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AJAX" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -77,7 +83,7 @@
       <workItem from="1601017177406" duration="1433000" />
       <workItem from="1601040661113" duration="57000" />
       <workItem from="1601117594393" duration="2545000" />
-      <workItem from="1601191563607" duration="1077000" />
+      <workItem from="1601191563607" duration="3703000" />
     </task>
     <task id="LOCAL−00001" summary="Added coordinates on the ship popup">
       <created>1600767328715</created>
@@ -193,7 +199,13 @@
       <option name="presentableId" value="LOCAL−00019" />
       <updated>1601120078489</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL−00020" summary="Added duplicate code in the search function into its own function, addSearchMarker">
+      <created>1601192711413</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1601192711413</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +239,8 @@
     <MESSAGE value="Fixed ships not loading when loading page for the first time" />
     <MESSAGE value="Added background color to the interactable color code section" />
     <MESSAGE value="Changed leaflet popups into paragraphs and added styling, added use of OpenWeatherMap icons into the weather popups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed leaflet popups into paragraphs and added styling, added use of OpenWeatherMap icons into the weather popups" />
+    <MESSAGE value="Added duplicate code in the search function into its own function, addSearchMarker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added duplicate code in the search function into its own function, addSearchMarker" />
   </component>
   <component name="WindowStateProjectService">
     <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600776013333">
@@ -243,11 +256,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600932253572" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1601120087037">
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1601192712748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600768910333" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601120087037" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601192712748" />
     <state x="2371" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600950113437" />
     <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1600939459124">
       <screen x="0" y="0" width="1920" height="1040" />
