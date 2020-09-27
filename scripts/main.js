@@ -39,7 +39,6 @@ fetch(metadataAPI)
         return answer.json();
     }).then(function(json){
     metadataInformation = json;
-    catchMetadata();
 }).catch(function(error) {
     console.log(error);
 });
@@ -321,26 +320,13 @@ function searchForShip(markers, searchBar) {
             // If mmsi checkbox is checked, search by the mmsi
             if (document.getElementById('mmsi').checked) {
                 if (locationInformation[i].mmsi === search) {
-                    marker = L.marker([locationInformation[i].latitude, locationInformation[i].longitude]);
-                    markers.addLayer(marker);
-                    for (let p = 0; p < circleInformation.length; p++) {
-                        if (circleInformation[p].shipMMSI === locationInformation[i].mmsi) {
-                            marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
-                        }
-                    }
+                    addSearchMarker(i, locationInformation[i].latitude, locationInformation[i].longitude);
                 }
             }
             // If ship name checkbox is checked, search by the mmsi
             if (document.getElementById('shipName').checked) {
                 if (locationInformation[i]['name'].toLowerCase().includes(search.toLowerCase())) {
-                    marker = L.marker([locationInformation[i].latitude, locationInformation[i].longitude]);
-                    console.log(locationInformation[i].mmsi);
-                    markers.addLayer(marker);
-                    for (let p = 0; p < circleInformation.length; p++) {
-                        if (circleInformation[p].shipMMSI === locationInformation[i].mmsi) {
-                            marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
-                        }
-                    }
+                    addSearchMarker(i, locationInformation[i].latitude, locationInformation[i].longitude);
                 }
             }
         }
@@ -348,6 +334,24 @@ function searchForShip(markers, searchBar) {
     }
     // Finally, add markers to map
     markers.addTo(mymap);
+}
+
+function addSearchMarker(i, latitude, longitude) {
+    console.log('Search is happening...');
+    marker = L.marker([latitude, longitude]);
+    markers.addLayer(marker);
+    for (let p = 0; p < circleInformation.length; p++) {
+        if (circleInformation[p].shipMMSI === locationInformation[i].mmsi) {
+            let circle = L.circle([latitude, longitude], {
+                color: 'black',
+                fillColor: '#f03',
+                fillOpacity: 1.0,
+                radius: 5,
+            }).addTo(ships);
+            circle.bindPopup(circleInformation[p].popUp);
+            marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
+        }
+    }
 }
 
 //Show and hide color code elements
