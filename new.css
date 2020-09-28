@@ -36,7 +36,7 @@ body{
     position: fixed;
     top: 0%;
     background: white;
-    height: 170px;
+    height: 140px;
     width: 100%;
     z-index: 1950;
     font-size: 1.5vh;
@@ -64,13 +64,13 @@ body{
     display: flex;
     flex-flow: row wrap;
     color: white;
-    width: 25%;
+    width: 30%;
     height: 35%;
 }
 
 #search{
     height: 100%;
-    width: 40px;
+    width: 5%;
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
     transition: 0.3s ease;
@@ -81,6 +81,8 @@ body{
 }
 #searchIcon{
     transition: 0.5s ease;
+    width: 70%;
+    max-width: 20px;
     opacity: 0.5;
 }
 
@@ -91,7 +93,7 @@ body{
 #searchBar{
     text-align: start;
     outline-style: none;
-    width: 90%;
+    width: 80%;
     height: 100%;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
@@ -143,9 +145,6 @@ button, #checkbox{
     font-weight: bolder;
     cursor: pointer;
     transition: 0.2s ease;
-}
-
-#hideMap{
     width: 5.5vw;
 }
 /* ==== lower portion of the uppersection ==== */
@@ -231,6 +230,8 @@ button, #checkbox{
 }
 #arrow{
     opacity: 0;
+    width: 70%;
+    max-width: 45px;
     position: relative;
     transition: 0.7s;
 }
@@ -382,14 +383,15 @@ button, #checkbox{
 
 @media (min-width: 2000px) and (min-height: 1000px){
     #first{ margin-top: 30px; }
+    .button, #checkbox{font-size: 20px}
 }
 
 /* ==== settings for a laptop-sized screen ==== */
 @media (max-width: 1700px) {
-    #searchSection{ width: 50%; }
+    #searchSection{ width: 30%; }
     #upperSection{ height: 140px; }
-    .button{ font-size: 2vh; }
-    #searchBar{ width: 40vw; }
+    .button, #checkbox{width: 10vw}
+    #searchBar{ width: 70%; }
     #mapid{ margin-top: 5vh; height: 70vh; }
     #colors{ margin-top: 4vh; }
     #displaycolors{ left: 7%; }
@@ -404,9 +406,8 @@ button, #checkbox{
 /* ==== settings for mobile screens ==== */
 @media (max-width: 1000px) {
     #upperSection{ flex-flow: column wrap; height: 20%; top: 0vh}
-    #upperPart { }
     #midSection{ flex-flow: column wrap; }
-    #logo{ position: absolute; top: 1vh; }
+    #logo{ position: fixed; top: 1vh; }
     #background{ visibility: hidden; }
     #background2{ visibility: hidden; }
     #displaycolors{ visibility: hidden; }
@@ -417,7 +418,7 @@ button, #checkbox{
     .color{ height: 15%;}
     body{ background-image: url("images/mobilebackground.jpg"); }
     #lowerPart{
-        position: relative;
+        position: fixed;
         top: 15%;
         right: 100px;
         width: 100%;
