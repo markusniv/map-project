@@ -2,13 +2,15 @@
     margin: 0px;
     padding: 0px;
     font-family: "Century Gothic";
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 body{
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     background: white;
@@ -30,7 +32,6 @@ body{
 #upperSection{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
     align-content: flex-start;
     position: fixed;
     top: 0%;
@@ -53,8 +54,6 @@ body{
     height: 100px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     background: transparent;
     padding: 0px;
     transition: 1.5s ease;
@@ -65,18 +64,10 @@ body{
     padding: 0px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
     color: white;
     border-radius: 10px;
     width: 30%;
     height: 35%;
-}
-
-#select{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
 }
 
 #search{
@@ -89,9 +80,6 @@ body{
     background: #E8E8E8;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
 }
 #searchIcon{
     transition: 0.5s ease;
@@ -103,8 +91,10 @@ body{
 }
 
 #searchBar{
+    text-align: start;
     outline-style: none;
     width: 83%;
+    height: 100%;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
     border-style: none;
@@ -118,12 +108,7 @@ input[type=radio]{
     margin-left: 20px;
     cursor: pointer;
 }
-#showAll:hover{
-    color: #A0A0A0;
-}
-#resetLocation:hover{
-    color: #A0A0A0;
-}
+
 /* ==== upper portion of the uppersection ==== */
 
 
@@ -131,8 +116,6 @@ input[type=radio]{
 #lowerPart{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     color: black;
     background-color: transparent;
     margin: 0px;
@@ -162,7 +145,6 @@ button {
     top: 0vh;
     left: 8vw;
     display: flex;
-    flex-flow: row wrap;
 }
 
 #checkbox{
@@ -197,21 +179,15 @@ button {
 #midSection{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
     position: absolute;
     bottom: 1%;
     width: 100%;
     height: 85vh;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
 }
 
 
 /* background images */
-#background{
+#background, #background2{
     position: absolute;
     bottom: 0%;
     z-index: -5;
@@ -220,12 +196,7 @@ button {
     opacity: 1;
 }
 #background2{
-    position: absolute;
-    bottom: 0%;
-    width: 100%;
-    transition: 1.5s ease;
     opacity: 0;
-    z-index: -5;
 }
 /* background images */
 
@@ -237,7 +208,6 @@ button {
     border-radius: 10px;
     box-shadow: 5px 5px 5px;
     padding: 10px;
-    margin-top: 2vh;
     transition: 1.5s ease;
     margin-right: 15vw;
 }
@@ -248,12 +218,9 @@ button {
 #filters{
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
     height: 80%;
     width: 15%;
     position: relative;
-    bottom: 2.5%;
     left: 10%;
     transition: 0.8s;
 }
@@ -263,16 +230,13 @@ button {
 #displayFilters{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: start;
-    align-items: center;
     background-image: linear-gradient(to left, #DCDCDC, #F5F5F5);
     border: black solid 2px;
     -webkit-transform: rotate(-90deg);
     width: 4vw;
     margin: 0px;
     position: relative;
-    color: black;
-    border-radius: 8px 8px 3px 3px;
+    border-radius: 8px 8px 0 0;
     border-bottom-style: none;
     transition: 0.2s;
     padding: 5px;
@@ -293,7 +257,6 @@ button {
 
 #displayFilters:active{
     background-image: linear-gradient(to right, #696969, #909090);
-    color: white;
 }
 #filterTxt{
     opacity: 1;
@@ -310,22 +273,17 @@ button {
     justify-content: space-between;
     position: relative;
     left: 10%;
-    align-items: center;
     height: 68vh;
     width: 10vw;
-    margin-top: 2vh;
     transition: 0.6s;
     background-image: linear-gradient(to bottom, #C8C8C8, #DCDCDC, #F5F5F5);
     border-radius: 10px;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    padding-left: 10px;
+    padding: 8px 0 8px 10px;
 }
 
 .color{
     width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-radius: 8px 0 0 8px;
     color: white;
     font-size: 1.5vh;
     height: 4%;
@@ -333,13 +291,11 @@ button {
     transition: 0.05s ease;
     border: black solid 2px;
 }
-
 .color:active{
     font-size: 1.4vh;
     box-shadow: black 2px 2px 2px;
     width: 96%;
 }
-
 .color:hover{
     filter:brightness(80%);
 }
@@ -384,12 +340,8 @@ button {
     display: flex;
     flex-flow: column wrap;
     position: absolute;
-    justify-content: center;
-    align-items: center;
     top: 0%;
     left: 0%;
-    color: white;
-    opacity: 1;
     height: 100vh;
     width: 100vw;
     z-index: 2000;
@@ -398,13 +350,9 @@ button {
     box-shadow: #888888 2px 2px 60px;
 }
 
-#intro2{
+#introText{
     display: flex;
     flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     color: black;
     font-size: 1vw;
     height: 10vh;
@@ -413,18 +361,11 @@ button {
 }
 
 #continue{
-    background: white;
     color: black;
     width: 15%;
     height: 30%;
     border-radius: 5px;
-    transition: 0.1s ease;
     color: white;
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
     animation: blink 1000ms infinite;
 }
 #continue:hover{
@@ -470,7 +411,7 @@ button {
     #mapid{ margin-top: 5vh; height: 70vh; }
     #colors{ margin-top: 4vh; }
     #displaycolors{ left: 7%; }
-    #intro2{ font-size: 2vw; }
+    #introText{ font-size: 2vw; }
     #continue{ font-size: 1vw; }
     #filters{ width: 16%; }
     #displayFilters{ left: 13%; width: 5vw; }
@@ -528,7 +469,7 @@ button {
         height: 90%;
         bottom: 5%;
         width: 25%;
-        left: 5%;
+        left: 35%;
     }
 }
 /* ==== settings for mobile screens ==== */
