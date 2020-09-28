@@ -195,7 +195,7 @@ function catchMetadata() {
             color = 'black';
         } else {
             shipTypeString = 'other';
-            color = 'slategray';
+            color = 'slategrey';
         }
 
         const name = metadataInformation[i].name;
