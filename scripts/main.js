@@ -341,7 +341,10 @@ function changeMode() {
     let uppersection = document.getElementById('upperSection');
     let background = document.getElementById('background');
     let background2 = document.getElementById('background2');
-    if (darkmode.checked) {
+    if (darkmode.classList.contains("disabled")) {
+        darkmode.classList.replace("disabled", "enabled");
+        darkmode.innerHTML = "Light mode";
+        darkmode.style.color = "white";
         document.body.style.backgroundColor = '#181818';
         uppersection.style.backgroundColor = '#181818';
         uppersection.style.color = 'white';
@@ -350,18 +353,25 @@ function changeMode() {
         document.getElementById('lowerPart').style.color = 'white';
         document.getElementById('clearMap').style.color = 'white';
         document.getElementById('logo').src = 'images/whitelogo.png';
+        document.getElementById("searchType").style.color = "white";
+        document.getElementById("hideMap").style.color = "white";
         background.style.opacity = 0;
         background2.style.opacity = 1;
         document.getElementById('mapid').style.filter = 'brightness(70%)';
         document.getElementById('filters').style.filter = 'brightness(70%)';
         document.getElementById('resetLocation').style.color = 'white';
     } else {
+        darkmode.classList.replace("enabled", "disabled");
+        darkmode.innerHTML = "Dark mode";
         document.body.style.backgroundColor = 'white';
         uppersection.style.backgroundColor = 'white';
+        darkmode.style.color = "black";
         uppersection.style.boxShadow = 'black 2px 2px 60px';
         document.getElementById('showAll').style.color = 'black';
         document.getElementById('lowerPart').style.color = 'black';
         document.getElementById('clearMap').style.color = 'black';
+        document.getElementById("searchType").style.color = "black";
+        document.getElementById("hideMap").style.color = "black";
         document.getElementById("logo").src = 'images/logo.png';
         document.getElementById('background').style.opacity = 1;
         document.getElementById('background2').style.opacity = 0;
@@ -399,5 +409,21 @@ function displayColors(){
         colors.classList.remove('visible');
         colors.classList.add('hidden');
         arrow.style.webkitTransform = 'rotate(0deg)';
+    }
+}
+
+// hide main section
+
+function hideMain(){
+    let main = document.getElementById("midSection");
+    let button = document.getElementById("hideMap");
+    if (main.style.zIndex == 0) {
+        main.style.zIndex = -6;
+        main.style.opacity = 0;
+        button.innerHTML = "Show map";
+    } else {
+        main.style.zIndex = 0;
+        main.style.opacity = 1;
+        button.innerHTML = "Hide map";
     }
 }

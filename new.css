@@ -46,7 +46,6 @@ body{
 
 #logo{
     margin-right: 2vh;
-    transition: 1.5s ease;
 }
 /* ==== upper portion of the uppersection ==== */
 #upperPart{
@@ -54,9 +53,9 @@ body{
     height: 100px;
     display: flex;
     flex-flow: row wrap;
-    background: transparent;
     padding: 0px;
     transition: 1.5s ease;
+    margin-right: 100px;
 }
 
 #searchSection{
@@ -65,8 +64,7 @@ body{
     display: flex;
     flex-flow: row wrap;
     color: white;
-    border-radius: 10px;
-    width: 30%;
+    width: 25%;
     height: 35%;
 }
 
@@ -93,7 +91,7 @@ body{
 #searchBar{
     text-align: start;
     outline-style: none;
-    width: 83%;
+    width: 90%;
     height: 100%;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
@@ -109,6 +107,15 @@ input[type=radio]{
     cursor: pointer;
 }
 
+#searchType{
+    margin-top: 1vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: start;
+    transition: 1.5s;
+}
+
 /* ==== upper portion of the uppersection ==== */
 
 
@@ -117,52 +124,29 @@ input[type=radio]{
     display: flex;
     flex-flow: row wrap;
     color: black;
+    position: relative;
+    bottom: 0%;
     background-color: transparent;
     margin: 0px;
     height: 2vh;
     transition: 1.5s ease;
 }
 
-.button:hover{
-    color: gray;
-}
-
-button {
+button, #checkbox{
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
     outline-style: none;
     border-style: none;
     background: transparent;
-    font-size: 1.5vh;
+    font-size: 2vh;
     font-weight: bolder;
     cursor: pointer;
     transition: 0.2s ease;
 }
 
-#mode{
-    position: relative;
-    top: 0vh;
-    left: 8vw;
-    display: flex;
-}
-
-#checkbox{
-    cursor: pointer;
-    height: 2vh;
-    width: 1.5vw;
-}
-
-#darkmode{
-    margin-left: 10px;
-}
-
-#clearMap{
-    height: 3vh;
-    width: 4vw;
-    position: relative;
-    top: 0vh;
-    right: 7vw;
+#hideMap{
+    width: 5.5vw;
 }
 /* ==== lower portion of the uppersection ==== */
 
@@ -183,6 +167,8 @@ button {
     bottom: 1%;
     width: 100%;
     height: 85vh;
+    transition: 0s;
+    z-index: 0;
 }
 
 
@@ -208,8 +194,8 @@ button {
     border-radius: 10px;
     box-shadow: 5px 5px 5px;
     padding: 10px;
-    transition: 1.5s ease;
     margin-right: 15vw;
+    transition: 1.5s;
 }
 /* map settings */
 
@@ -367,9 +353,6 @@ button {
     color: white;
     animation: blink 1000ms infinite;
 }
-#continue:hover{
-    background: darkgray;
-}
 
 @keyframes blink{
     /* Intro button blinking animation */
@@ -420,33 +403,24 @@ button {
 
 /* ==== settings for mobile screens ==== */
 @media (max-width: 1000px) {
-    #upperSection{ flex-flow: column wrap; height: 20%; }
-    #upperPart { position: absolute; top: 7vh; }
+    #upperSection{ flex-flow: column wrap; height: 20%; top: 0vh}
+    #upperPart { }
     #midSection{ flex-flow: column wrap; }
-    #logo{ position: absolute; top: -4vh; }
+    #logo{ position: absolute; top: 1vh; }
     #background{ visibility: hidden; }
     #background2{ visibility: hidden; }
-    #searchSection{ position: absolute; top: 5vh; width: 50%; }
-    #searchBar{ height: 3vh; }
-    #search{ height: 3vh; }
     #displaycolors{ visibility: hidden; }
     #startlogo{ width: 80vw; }
     #intro{ visibility: hidden; }
-    #resetLocation{ margin-left: 15vw; }
+    #hideMap{visibility: hidden;}
     #displayFilters{ visibility: hidden; }
-    .color{ height: 15%; }
+    .color{ height: 15%;}
     body{ background-image: url("images/mobilebackground.jpg"); }
-    #clearMap{
-        position: absolute;
-        top: -5vh;
-        left: 1vw;
-    }
     #lowerPart{
-        position: absolute;
-        top: 16vh;
-        left: 4vw;
-        background: transparent;
-        color: black;
+        position: relative;
+        top: 15%;
+        right: 100px;
+        width: 100%;
     }
     #mapid{
         height: 40vh;

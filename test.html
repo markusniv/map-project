@@ -20,20 +20,26 @@
                 <input type="text" name="search" id="searchBar" placeholder="Search by..">
                 <button id="search"><img id="searchIcon" src="images/magnifyingglass.png" alt="a magnyfying glass"></button>
             </div>
-            <button class="button" id="showAll" onclick="showAll()">Show all</button>
-            <button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
+            <div id="searchType">
+                <span>
+                    <input type="radio" id="shipName" name="searchType" value="shipName" checked="checked">
+                    <label for="shipName">Ship Name</label>
+                </span>
+                <span>
+                    <input type="radio" id="mmsi" name="searchType" value="mmsi">
+                    <label for="mmsi">Maritime Mobile Service Identity</label>
+                </span>
+
+            </div>
+
         </section>
         <section id="lowerPart">
             <h2 class="hidden">Lower part</h2>
             <button class="button" onclick="clearMap()" id="clearMap">Clear</button>
-            <input type="radio" id="shipName" name="searchType" value="shipName" checked="checked">
-            <label for="shipName">Ship Name</label>
-            <input type="radio" id="mmsi" name="searchType" value="mmsi">
-            <label for="mmsi">Maritime Mobile Service Identity</label>
-            <div id="mode">
-                <input type="checkbox" id="checkbox" name="mode" onclick="changeMode()">
-                <label for="checkbox" id="darkmode">Dark mode</label>
-            </div>
+            <button class="button" id="showAll" onclick="showAll()">Show all</button>
+            <button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
+            <button class="button" id="hideMap" onclick="hideMain()">Hide map</button>
+            <button class="disabled" id="checkbox" onclick="changeMode()">Dark mode</button>
         </section>
     </header>
     <main id="midSection">
@@ -63,7 +69,7 @@
 
         </div>
     </main>
-    <aside id="intro">
+    <aside id="intro" class="hidden">
         <img src=images/startlogo.png id="startlogo" alt="A shiptracker logo">
         <div id="introText">Welcome to Shiptracker. Let us begin.
             <button id="continue"  onclick="intro()">Continue</button>
