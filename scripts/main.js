@@ -172,7 +172,7 @@ function catchMetadata() {
             color = 'darkkhaki'
         } else if (shipType === 52) {
             shipTypeString = 'tug';
-            color = 'yellow';
+            color = 'greenyellow';
         } else if (shipType === 53) {
             shipTypeString = 'port tender';
             color = 'magenta';
