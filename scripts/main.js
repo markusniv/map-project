@@ -2,6 +2,7 @@
 let locationInformation = [];
 let metadataInformation = [];
 let circleInformation = [];
+
 let locationAPI = 'https://meri.digitraffic.fi/api/v1/locations/latest';
 let metadataAPI = 'https://meri.digitraffic.fi/api/v1/metadata/vessels';
 let weatherIcon = 'http://openweathermap.org/img/wn/';
@@ -213,7 +214,8 @@ function catchMetadata() {
                                 <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
                                 <br>Ship type: ${shipTypeString}
                                 <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
-                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button></p>`
+                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>                         
+                                </p>`
 
         });
     }
