@@ -14,15 +14,17 @@
 <body>
     <header id="upperSection">
         <section id="upperPart">
+            <h2 class="hidden">Upper part</h2>
             <img id="logo" src="images/logo.png" alt="Shiptracker logo">
             <div id="searchSection">
                 <input type="text" name="search" id="searchBar" placeholder="Search by..">
-                <button id="search"><img id="searchIcon" src="images/magnifyingglass.png"></button>
+                <button id="search"><img id="searchIcon" src="images/magnifyingglass.png" alt="a magnyfying glass"></button>
             </div>
             <button class="button" id="showAll" onclick="showAll()">Show all</button>
             <button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
         </section>
         <section id="lowerPart">
+            <h2 class="hidden">Lower part</h2>
             <button class="button" onclick="clearMap()" id="clearMap">Clear</button>
             <input type="radio" id="shipName" name="searchType" value="shipName" checked="checked">
             <label for="shipName">Ship Name</label>
@@ -35,9 +37,9 @@
         </section>
     </header>
     <main id="midSection">
-        <section id="filters">
-            <button id="displayFilters" onclick="displayColors()"><img src="images/arrow.png" id="arrow" width="45vw">
-                <p id="filterTxt">Filters</p>
+        <div id="filters">
+            <button id="displayFilters" onclick="displayColors()"><img src="images/arrow.png" id="arrow" alt="an Arrow">
+                <span id="filterTxt">Filters</span>
             </button>
                 <div id="colors" class="hidden">
                     <button id="color1" class="color" onclick="showOther('blue')">Fishing</button>
@@ -56,20 +58,20 @@
                     <button id="color14" class="color" onclick="showOther('black')">Tanker</button>
                     <button id="color15" class="color" onclick="showOther('gray')">Other</button>
                 </div>
-        </section>
+        </div>
         <div id="mapid">
-            <!--- Here is a map --->
+
         </div>
     </main>
     <aside id="intro">
-        <img src=images/startlogo.png id="startlogo">
+        <img src=images/startlogo.png id="startlogo" alt="A shiptracker logo">
         <div id="introText">Welcome to Shiptracker. Let us begin.
             <button id="continue"  onclick="intro()">Continue</button>
         </div>
     </aside>
-    <img src="images/ship.jpg" id="background">
-    <img src="images/darkbackground.jpg" id="background2">
-    <script type='text/javascript' src='scripts/config.js'></script>
+    <img src="images/ship.jpg" id="background" alt="A background picture">
+    <img src="images/darkbackground.jpg" id="background2" alt="A background picture">
+    <script src='scripts/config.js'></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
