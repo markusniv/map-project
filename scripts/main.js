@@ -157,11 +157,8 @@ function catchMetadata() {
         } else if (shipType === 35) {
             shipTypeString = 'military';
             color = 'green';
-        } else if (shipType === 36) {
+        } else if (shipType === 36 || shipType === 37) {
             shipTypeString = 'sailing';
-            color = 'white';
-        } else if (shipType === 37) {
-            shipTypeString = 'pleasure craft'
             color = 'white';
         } else if (shipType >= 40 && shipType < 50) {
             shipTypeString = 'high speed craft';

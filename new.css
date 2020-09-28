@@ -304,18 +304,17 @@ button {
 #color2{ background: yellow; color: black; }
 #color3{ background: green; }
 #color4{ background: white; color: black; }
-#color5{ background: white; color: black; }
-#color6{ background: crimson; }
-#color7{ background: orange; color: white; }
-#color8{ background: darkkhaki; }
-#color9{ background: yellow;color: black; }
-#color10{ background: magenta; color: white; }
-#color11{ background: darkslategray; color: white; }
-#color12{ background: darkblue; color: white; }
-#color13{ background: red; }
-#color14{ background: brown; }
-#color15{ background: black; color: white; }
-#color16{ background: slategrey; }
+#color5{ background: crimson; }
+#color6{ background: orange; color: white; }
+#color7{ background: darkkhaki; }
+#color8{ background: yellow;color: black; }
+#color9{ background: magenta; color: white; }
+#color10{ background: darkslategray; color: white; }
+#color11{ background: darkblue; color: white; }
+#color12{ background: red; }
+#color13{ background: brown; }
+#color14{ background: black; color: white; }
+#color15{ background: slategrey; }
 /* ==== filter section ==== */
 
 .popupTextBox {
