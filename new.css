@@ -13,7 +13,7 @@ body{
     flex-flow: column wrap;
     width: 100%;
     height: 100%;
-    background: white;
+    background: whitesmoke;
     transition: 1.5s ease;
     overflow: hidden;
 }
@@ -204,7 +204,7 @@ button, #checkbox{
     display: flex;
     flex-flow: row wrap;
     height: 80%;
-    width: 15%;
+    width: 14%;
     position: relative;
     left: 10%;
     transition: 0.8s;
@@ -225,7 +225,7 @@ button, #checkbox{
     border-bottom-style: none;
     transition: 0.2s;
     padding: 5px;
-    height: 8vh;
+    height: 10vh;
     left: 15%;
 }
 #arrow{
@@ -233,6 +233,7 @@ button, #checkbox{
     width: 70%;
     max-width: 45px;
     position: relative;
+    top: 0.3vw;
     transition: 0.7s;
 }
 #displayFilters:hover #arrow{
