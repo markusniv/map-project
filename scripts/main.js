@@ -227,6 +227,7 @@ function catchMetadata() {
 // Draws the ships on the map
 
 function drawShips(color) {
+    clearMap();
     if (showAllShips) {
         for (let i = 0; i < circleInformation.length; i++) {
             let circle = L.circle([circleInformation[i].latitude, circleInformation[i].longitude], {
@@ -319,7 +320,9 @@ function addSearchMarker(i, latitude, longitude) {
 function clearMap() {
     console.log("Clearing layers..");
     ships.clearLayers();
-    markers.clearLayers();
+    markers.eachLayer((layer) => {
+        layer.remove();
+    })
 }
 // Clear markers and show all types of ships
 
