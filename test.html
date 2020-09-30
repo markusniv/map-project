@@ -14,7 +14,7 @@
 <body>
     <header id="upperSection">
         <section id="upperPart">
-            <h2 class="hidden">Upper part</h2>
+            <h2 class="displayNone">Upper part</h2>
             <img id="logo" src="images/logo.png" alt="Shiptracker logo">
             <div id="searchSection">
                 <input type="text" name="search" id="searchBar" placeholder="Search by..">
@@ -32,7 +32,7 @@
             </div>
         </section>
         <section id="lowerPart">
-            <h2 class="hidden">Lower part</h2>
+            <h2 class="displayNone">Lower part</h2>
             <button class="button" onclick="clearMap()" id="clearMap">Clear</button>
             <button class="button" id="showAll" onclick="showAll()">Show all</button>
             <button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
@@ -67,7 +67,7 @@
 
         </div>
     </main>
-    <aside id="intro">
+    <aside id="intro" class="hidden">
         <img src=images/startlogo.png id="startlogo" alt="A shiptracker logo">
         <div id="introText">Welcome to Shiptracker. Let us begin.
             <button id="continue"  onclick="intro()">Continue</button>
