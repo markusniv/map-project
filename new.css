@@ -24,6 +24,12 @@ body{
 .hidden{
     visibility: hidden;
 }
+.display{
+    display: block;
+}
+.displayNone{
+    display: none;
+}
 
 /* ===================================================================================*/
 /* ============================== Header portion begins ==============================*/
@@ -44,18 +50,16 @@ body{
     box-shadow: black 2px 2px 60px;
 }
 
-#logo{
-    margin-right: 2vh;
-}
 /* ==== upper portion of the uppersection ==== */
 #upperPart{
-    width: 100%;
+    width: 90%;
     height: 100px;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
+    margin-right: 4vw;
     padding: 0px;
     transition: 1.5s ease;
-    margin-right: 100px;
 }
 
 #searchSection{
@@ -64,7 +68,7 @@ body{
     display: flex;
     flex-flow: row wrap;
     color: white;
-    width: 30%;
+    width: 50%;
     height: 35%;
 }
 
@@ -389,10 +393,8 @@ button, #checkbox{
 
 /* ==== settings for a laptop-sized screen ==== */
 @media (max-width: 1700px) {
-    #searchSection{ width: 30%; }
     #upperSection{ height: 140px; }
     .button, #checkbox{width: 10vw}
-    #searchBar{ width: 70%; }
     #mapid{ margin-top: 5vh; height: 70vh; }
     #colors{ margin-top: 4vh; }
     #displaycolors{ left: 7%; }
@@ -416,7 +418,7 @@ button, #checkbox{
     #intro{ visibility: hidden; }
     #hideMap{visibility: hidden;}
     #displayFilters{ visibility: hidden; }
-    .color{ height: 15%;}
+    .color{ height: 15%; border-radius: 0px}
     body{ background-image: url("images/mobilebackground.jpg"); }
     #lowerPart{
         position: fixed;
