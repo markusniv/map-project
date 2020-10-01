@@ -8,28 +8,28 @@
     text-align: center;
 }
 
+html{
+    display: table;
+    margin: auto;
+    background-image: linear-gradient(to top, silver, #DCDCDC, white);
+}
+
 body{
     display: flex;
     flex-flow: column wrap;
-    width: 100%;
-    height: 100%;
-    background: whitesmoke;
-    transition: 1.5s ease;
+    max-width: 2000px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/ship.jpg");
+    background-size: cover;
     overflow: hidden;
+    box-shadow: black 1px 1px 10px;
 }
 
-.visible{
-    visibility: visible;
-}
-.hidden{
-    visibility: hidden;
-}
-.display{
-    display: block;
-}
-.displayNone{
-    display: none;
-}
+.visible{ visibility: visible; }
+.hidden{ visibility: hidden; }
+.display{ display: block; }
+.displayNone{ display: none; }
 
 /* ===================================================================================*/
 /* ============================== Header portion begins ==============================*/
@@ -37,16 +37,18 @@ body{
 
 #upperSection{
     display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start;
-    position: fixed;
-    top: 0%;
+    flex-flow: column wrap;
     background: white;
-    height: 140px;
+    position: absolute;
+    top: 0px;
+    height: 15vh;
+    min-height: 140px;
     width: 100%;
+    max-width: 2000px;
     z-index: 1950;
     font-size: 1.5vh;
-    transition: 1.5s ease;
+    transition-property: background-color;
+    transition-duration: 1.5s;
     box-shadow: black 2px 2px 60px;
 }
 
@@ -90,9 +92,7 @@ body{
     opacity: 0.5;
 }
 
-#search:hover #searchIcon{
-    opacity: 1;
-}
+#search:hover #searchIcon{ opacity: 1; }
 
 #searchBar{
     text-align: start;
@@ -129,16 +129,15 @@ input[type=radio]{
 #lowerPart{
     display: flex;
     flex-flow: row wrap;
-    color: black;
-    position: relative;
     bottom: 0%;
     background-color: transparent;
     margin: 0px;
-    height: 2vh;
+    height: 4vh;
     transition: 1.5s ease;
+    color: black;
 }
 
-button, #checkbox{
+button, #darkMode{
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
@@ -149,7 +148,7 @@ button, #checkbox{
     font-weight: bolder;
     cursor: pointer;
     transition: 0.2s ease;
-    width: 5.5vw;
+    width: 10vw;
 }
 /* ==== lower portion of the uppersection ==== */
 
@@ -164,41 +163,27 @@ button, #checkbox{
 /* =================================================================================*/
 
 #midSection{
+    margin-top: 10vh;
     display: flex;
-    flex-flow: row wrap;
-    position: absolute;
-    bottom: 1%;
-    width: 100%;
+    flex-flow: column wrap;
+    width: 80%;
     height: 85vh;
-    transition: 0s;
+    transition-property: opacity;
+    transition-duration: 1.5s;
     z-index: 0;
 }
-
-
-/* background images */
-#background, #background2{
-    position: absolute;
-    bottom: 0%;
-    z-index: -5;
-    width: 100%;
-    transition: 1.5s ease;
-    opacity: 1;
-}
-#background2{
-    opacity: 0;
-}
-/* background images */
-
 
 /* map settings */
 #mapid {
     height: 70vh;
     width: 60vw;
+    max-width: 1500px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px;
     padding: 10px;
-    margin-right: 15vw;
-    transition: 1.5s;
+    transition-property: opacity;
+    transition-duration: 1.5s;
+    margin-right: 8vw;
 }
 /* map settings */
 
@@ -206,12 +191,14 @@ button, #checkbox{
 /* ==== filter section ==== */
 #filters{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     height: 80%;
-    width: 14%;
+    width: 10vw;
     position: relative;
-    left: 10%;
-    transition: 0.8s;
+    left: 9vw;
+    transition-property: left, opacity;
+    transition-duration: 0.8s;
+
 }
 
 
@@ -222,38 +209,32 @@ button, #checkbox{
     background-image: linear-gradient(to left, #DCDCDC, #F5F5F5);
     border: black solid 2px;
     -webkit-transform: rotate(-90deg);
-    width: 4vw;
+    width: 3vw;
     margin: 0px;
-    position: relative;
     border-radius: 8px 8px 0 0;
     border-bottom-style: none;
+    position: relative;
+    left: 1vh;
     transition: 0.2s;
-    padding: 5px;
-    height: 10vh;
-    left: 15%;
+    height: 3vw;
+    z-index: 1;
 }
 #arrow{
     opacity: 0;
-    width: 70%;
+    width: 50%;
     max-width: 45px;
-    position: relative;
-    top: 0.3vw;
+    position: fixed;
+    top:1%;
     transition: 0.7s;
 }
-#displayFilters:hover #arrow{
-    opacity: 1;
-}
-#displayFilters:hover #filterTxt{
-    opacity: 0;
-}
+#displayFilters:hover #arrow{ opacity: 1;}
+#displayFilters:hover #filterTxt{ opacity: 0; }
+#displayFilters:active{ background-image: linear-gradient(to right, #696969, #909090); }
 
-#displayFilters:active{
-    background-image: linear-gradient(to right, #696969, #909090);
-}
 #filterTxt{
     opacity: 1;
-    position: relative;
-    bottom: 50%;
+    position: fixed;
+    top: 10px;
     font-size: 1vw;
 }
 /* Filter button section */
@@ -263,34 +244,33 @@ button, #checkbox{
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    position: relative;
-    left: 10%;
     height: 68vh;
     width: 10vw;
     transition: 0.6s;
     background-image: linear-gradient(to bottom, #C8C8C8, #DCDCDC, #F5F5F5);
     border-radius: 10px;
     padding: 8px 0 8px 10px;
+    z-index: 2;
 }
 
 .color{
     width: 100%;
     border-radius: 8px 0 0 8px;
     color: white;
-    font-size: 1.5vh;
+    font-size: 65%;
     height: 4%;
     box-shadow: black 5px 5px 5px;
     transition: 0.05s ease;
     border: black solid 2px;
+    text-align: left;
+    padding: 0 5px;
 }
 .color:active{
     font-size: 1.4vh;
     box-shadow: black 2px 2px 2px;
     width: 96%;
 }
-.color:hover{
-    filter:brightness(80%);
-}
+.color:hover{ filter:brightness(80%); }
 
 #color1{ background: blue; }
 #color2{ background: yellow; color: black; }
@@ -309,12 +289,8 @@ button, #checkbox{
 #color15{ background: slategrey; }
 /* ==== filter section ==== */
 
-.popupTextBox {
-    text-align: center;
-}
-.popupTextBox img {
-    background-color: #888888;
-}
+.popupTextBox { text-align: center; }
+.popupTextBox img {background-color: #888888; }
 
 /* ===============================================================================*/
 /* ============================== Main portion ends ==============================*/
@@ -336,7 +312,8 @@ button, #checkbox{
     height: 100vh;
     width: 100vw;
     z-index: 2000;
-    transition: 2s;
+    transition-property: top;
+    transition-duration: 2s;
     background-image: linear-gradient(to top, #F0F0F0, #909090);
     box-shadow: #888888 2px 2px 60px;
 }
@@ -386,15 +363,15 @@ button, #checkbox{
 /* ============================== Media queries to make the website responsive ==============================*/
 /* ==========================================================================================================*/
 
-@media (min-width: 2000px) and (min-height: 1000px){
-    #first{ margin-top: 30px; }
-    .button, #checkbox{font-size: 20px}
+@media (min-width: 2000px){
+    .button, #darkMode{font-size: 20px; width: 8vw}
+    .color{font-size: 90%}
 }
 
 /* ==== settings for a laptop-sized screen ==== */
 @media (max-width: 1700px) {
     #upperSection{ height: 140px; }
-    .button, #checkbox{width: 10vw}
+    .button, #darkMode{width: 10vw}
     #mapid{ margin-top: 5vh; height: 70vh; }
     #colors{ margin-top: 4vh; }
     #displaycolors{ left: 7%; }
@@ -407,36 +384,30 @@ button, #checkbox{
 
 
 /* ==== settings for mobile screens ==== */
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
     #upperSection{ flex-flow: column wrap; height: 20%; top: 0vh}
     #midSection{ flex-flow: column wrap; }
-    #logo{ position: fixed; top: 1vh; }
-    #background{ visibility: hidden; }
-    #background2{ visibility: hidden; }
+    #logo{width: 30%; position: absolute; top: 1px; }
+    #upperPart{justify-content: center}
     #displaycolors{ visibility: hidden; }
-    #startlogo{ width: 80vw; }
     #intro{ visibility: hidden; }
-    #hideMap{visibility: hidden;}
     #displayFilters{ visibility: hidden; }
     .color{ height: 15%; border-radius: 0px}
     body{ background-image: url("images/mobilebackground.jpg"); }
-    #lowerPart{
-        position: fixed;
-        top: 15%;
-        right: 100px;
-        width: 100%;
-    }
+    #searchBar{width: 40%}
     #mapid{
-        height: 40vh;
-        width: 90vw;
+        height: 30vh;
+        width: 80vw;
         bottom: 20%;
         left: 8%;
     }
     #colors{
+        margin-top: 5%;
         width: 100%;
         height: 40%;
         position: absolute;
         bottom: 0%;
+        left: 8%;
         flex-flow: column wrap;
         visibility: visible;
         background: transparent;

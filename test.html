@@ -27,7 +27,7 @@
                 </span>
                 <span>
                     <input type="radio" id="mmsi" name="searchType" value="mmsi">
-                    <label for="mmsi">Maritime Mobile Service Identity</label>
+                    <label for="mmsi">MMSI</label>
                 </span>
             </div>
         </section>
@@ -37,11 +37,11 @@
             <button class="button" id="showAll" onclick="showAll()">Show all</button>
             <button class="button" id="resetLocation" onclick="resetLocationData()">Reload locations</button>
             <button class="button" id="hideMap" onclick="hideMain()">Hide map</button>
-            <button class="disabled" id="checkbox" onclick="changeMode()">Dark mode</button>
+            <button class="disabled" id="darkMode" onclick="changeMode()">Dark mode</button>
         </section>
     </header>
     <main id="midSection">
-        <div id="filters">
+        <section id="filters">
             <button id="displayFilters" onclick="displayColors()"><img src="images/arrow.png" id="arrow" alt="an Arrow">
                 <span id="filterTxt">Filters</span>
             </button>
@@ -62,19 +62,16 @@
                     <button id="color14" class="color" onclick="showOther('black')">Tanker</button>
                     <button id="color15" class="color" onclick="showOther('gray')">Other</button>
                 </div>
-        </div>
+        </section>
         <div id="mapid">
-
         </div>
     </main>
-    <aside id="intro" class="hidden">
+    <aside id="intro">
         <img src=images/startlogo.png id="startlogo" alt="A shiptracker logo">
         <div id="introText">Welcome to Shiptracker. Let us begin.
             <button id="continue"  onclick="intro()">Continue</button>
         </div>
     </aside>
-    <img src="images/ship.jpg" id="background" alt="A background picture">
-    <img src="images/darkbackground.jpg" id="background2" alt="A background picture">
     <script src='scripts/config.js'></script>
     <script src="scripts/main.js"></script>
 </body>

@@ -196,7 +196,7 @@ function catchMetadata() {
             color = 'black';
         } else {
             shipTypeString = 'other';
-            color = 'slategrey';
+            color = 'gray';
         }
 
         const name = metadataInformation[i].name;
@@ -343,33 +343,28 @@ function showOther(color) {
 // Handling Dark Mode setting
 
 function changeMode() {
-    let darkmode = document.getElementById('checkbox');
+    let darkmode = document.getElementById('darkMode');
     let uppersection = document.getElementById('upperSection');
-    let background = document.getElementById('background');
-    let background2 = document.getElementById('background2');
     if (darkmode.classList.contains("disabled")) {
         darkmode.classList.replace("disabled", "enabled");
         darkmode.innerHTML = "Light mode";
         darkmode.style.color = "white";
-        document.body.style.backgroundColor = '#181818';
+        document.querySelector("html").style.backgroundImage = "linear-gradient(to top, #303030, #505050, #696969)";
         uppersection.style.backgroundColor = '#181818';
         uppersection.style.color = 'white';
         uppersection.style.boxShadow = 'white 1px 1px 30px';
+        document.body.style.filter = "brightness(80%)";
         document.getElementById('showAll').style.color = 'white';
         document.getElementById('lowerPart').style.color = 'white';
         document.getElementById('clearMap').style.color = 'white';
         document.getElementById('logo').src = 'images/whitelogo.png';
         document.getElementById("searchType").style.color = "white";
         document.getElementById("hideMap").style.color = "white";
-        background.style.opacity = 0;
-        background2.style.opacity = 1;
-        document.getElementById('mapid').style.filter = 'brightness(70%)';
-        document.getElementById('filters').style.filter = 'brightness(70%)';
+        document.getElementById('midSection').style.filter = 'brightness(70%)';
         document.getElementById('resetLocation').style.color = 'white';
     } else {
         darkmode.classList.replace("enabled", "disabled");
         darkmode.innerHTML = "Dark mode";
-        document.body.style.backgroundColor = 'white';
         uppersection.style.backgroundColor = 'white';
         darkmode.style.color = "black";
         uppersection.style.boxShadow = 'black 2px 2px 60px';
@@ -379,10 +374,9 @@ function changeMode() {
         document.getElementById("searchType").style.color = "black";
         document.getElementById("hideMap").style.color = "black";
         document.getElementById("logo").src = 'images/logo.png';
-        document.getElementById('background').style.opacity = 1;
-        document.getElementById('background2').style.opacity = 0;
-        document.getElementById('mapid').style.filter = 'brightness(100%)';
-        document.getElementById('filters').style.filter = 'brightness(100%)';
+        document.querySelector("html").style.backgroundImage = "linear-gradient(to top, silver, #DCDCDC, white)";
+        document.body.style.filter = "brightness(100%)";
+        document.getElementById('midSection').style.filter = 'brightness(100%)';
         document.getElementById('resetLocation').style.color = 'black';
     }
 }
@@ -406,12 +400,12 @@ function displayColors(){
     let colors = document.getElementById('colors');
     let arrow = document.getElementById('arrow');
     if(colors.className === 'hidden') {
-        filters.style.left = '-1%';
+        filters.style.left = '0vw';
         colors.classList.remove('hidden');
         colors.classList.add('visible');
         arrow.style.webkitTransform = 'rotate(180deg)';
     } else {
-        filters.style.left = '10%';
+        filters.style.left = '9vw';
         colors.classList.remove('visible');
         colors.classList.add('hidden');
         arrow.style.webkitTransform = 'rotate(0deg)';
@@ -425,7 +419,6 @@ function hideMain(){
     let button = document.getElementById("hideMap");
     if (main.style.zIndex == 0) {
         main.style.zIndex = -6;
-        main.style.opacity = 0;
         button.innerHTML = "Show map";
     } else {
         main.style.zIndex = 0;
