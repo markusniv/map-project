@@ -375,7 +375,6 @@ button{
 
 /* ==== settings for a laptop-sized screen ==== */
 @media (max-width: 1700px) {
-    #upperSection{ height: 140px; }
     .button, #darkMode{width: 10vw}
     #mapid{ margin-top: 5vh; height: 70vh; }
     #colors{ margin-top: 4vh; }
