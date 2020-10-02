@@ -3,6 +3,8 @@ let locationInformation = [];
 let metadataInformation = [];
 let circleInformation = [];
 
+let filtersPushed = false;
+
 let locationAPI = 'https://meri.digitraffic.fi/api/v1/locations/latest';
 let metadataAPI = 'https://meri.digitraffic.fi/api/v1/metadata/vessels';
 let weatherIcon = 'http://openweathermap.org/img/wn/';
@@ -396,17 +398,18 @@ function intro(){
 // Displays the color code buttons by sliding them to the left
 
 function displayColors(){
-
     let filters = document.getElementById('filters');
     let colors = document.getElementById('colors');
     let arrow = document.getElementById('arrow');
     console.log(filters.style.left);
     if(colors.className === 'hidden') {
+        filtersPushed = true;
         filters.style.left = '0vw';
         colors.classList.remove('hidden');
         colors.classList.add('visible');
         arrow.style.webkitTransform = 'rotate(180deg)';
     } else {
+        filtersPushed = false;
         filters.style.left = '9vw';
         colors.classList.remove('visible');
         colors.classList.add('hidden');
@@ -434,6 +437,10 @@ window.addEventListener('resize', e => {
     if (w <= 1050) {
         filters.style.left = '35%';
     } else {
-        filters.style.left = '9vw';
+        if (filtersPushed) {
+            filters.style.left = '0vw';
+        } else {
+            filters.style.left = '9vw';
+        }
     }
 })
