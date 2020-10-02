@@ -396,9 +396,11 @@ function intro(){
 // Displays the color code buttons by sliding them to the left
 
 function displayColors(){
+
     let filters = document.getElementById('filters');
     let colors = document.getElementById('colors');
     let arrow = document.getElementById('arrow');
+    console.log(filters.style.left);
     if(colors.className === 'hidden') {
         filters.style.left = '0vw';
         colors.classList.remove('hidden');
@@ -425,3 +427,14 @@ function hideMain(){
         button.innerHTML = "Hide map";
     }
 }
+
+window.addEventListener('resize', e => {
+    let w = document.documentElement.clientWidth;
+    console.log(w);
+    if (w <= 1050) {
+        let filters = document.getElementById('filters');
+        filters.style.left = '35%';
+    } else {
+        filters.style.left = '9vw';
+    }
+})
