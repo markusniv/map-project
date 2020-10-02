@@ -12,6 +12,7 @@ html{
     display: table;
     margin: auto;
     background-image: linear-gradient(to top, silver, #DCDCDC, white);
+    overflow: hidden;
 }
 
 body{
@@ -396,7 +397,7 @@ button{
     #displaycolors{ visibility: hidden; }
     #intro{ visibility: hidden; }
     #displayFilters{ visibility: hidden; }
-    .color{ height: 15%; border-radius: 0px; }
+    .color{ height: 17%; border-radius: 0px; text-align: center; font-size: 2vh}
     body{ background-image: url("images/mobilebackground.jpg"); }
     #searchBar{width: 40%}
     #mapid{
@@ -409,7 +410,6 @@ button{
         margin-top: 5%;
         width: 100%;
         height: 40%;
-        max-height: 290px;
         position: absolute;
         bottom: -2%;
         flex-flow: column wrap;
