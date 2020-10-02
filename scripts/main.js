@@ -4,6 +4,7 @@ let metadataInformation = [];
 let circleInformation = [];
 
 let filtersPushed = false;
+let mapVisible = true;
 
 let locationAPI = 'https://meri.digitraffic.fi/api/v1/locations/latest';
 let metadataAPI = 'https://meri.digitraffic.fi/api/v1/metadata/vessels';
@@ -422,10 +423,12 @@ function displayColors(){
 function hideMain(){
     let main = document.getElementById("midSection");
     let button = document.getElementById("hideMap");
-    if (main.style.zIndex == 9) {
+    if (mapVisible) {
+        mapVisible = false;
         main.style.zIndex = -6;
         button.innerHTML = "Show map";
     } else {
+        mapVisible = true;
         main.style.zIndex = 9;
         button.innerHTML = "Hide map";
     }
@@ -435,7 +438,7 @@ window.addEventListener('resize', e => {
     let w = document.documentElement.clientWidth;
     let filters = document.getElementById('filters');
     if (w <= 1050) {
-        filters.style.left = '35%';
+        filters.style.left = '37%';
     } else {
         if (filtersPushed) {
             filters.style.left = '0vw';
