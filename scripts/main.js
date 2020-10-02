@@ -355,14 +355,12 @@ function changeMode() {
         uppersection.style.backgroundColor = '#181818';
         uppersection.style.color = 'white';
         uppersection.style.boxShadow = 'white 1px 1px 30px';
-        document.body.style.filter = "brightness(80%)";
         document.getElementById('showAll').style.color = 'white';
         document.getElementById('lowerPart').style.color = 'white';
         document.getElementById('clearMap').style.color = 'white';
         document.getElementById('logo').src = 'images/whitelogo.png';
         document.getElementById("searchType").style.color = "white";
         document.getElementById("hideMap").style.color = "white";
-        document.getElementById('midSection').style.filter = 'brightness(70%)';
         document.getElementById('resetLocation').style.color = 'white';
     } else {
         darkmode.classList.replace("enabled", "disabled");
@@ -377,8 +375,6 @@ function changeMode() {
         document.getElementById("hideMap").style.color = "black";
         document.getElementById("logo").src = 'images/logo.png';
         document.querySelector("html").style.backgroundImage = "linear-gradient(to top, silver, #DCDCDC, white)";
-        document.body.style.filter = "brightness(100%)";
-        document.getElementById('midSection').style.filter = 'brightness(100%)';
         document.getElementById('resetLocation').style.color = 'black';
     }
 }
@@ -401,7 +397,6 @@ function displayColors(){
     let filters = document.getElementById('filters');
     let colors = document.getElementById('colors');
     let arrow = document.getElementById('arrow');
-    console.log(filters.style.left);
     if(colors.className === 'hidden') {
         filtersPushed = true;
         filters.style.left = '0vw';
@@ -425,11 +420,13 @@ function hideMain(){
     if (mapVisible) {
         mapVisible = false;
         main.style.zIndex = -6;
+        document.getElementById("filters").style.display = "none";
         button.innerHTML = "Show map";
     } else {
         mapVisible = true;
         main.style.zIndex = 9;
         button.innerHTML = "Hide map";
+        document.getElementById("filters").style.display = "flex";
     }
 }
 

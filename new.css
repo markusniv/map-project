@@ -12,7 +12,6 @@ html{
     display: table;
     margin: auto;
     background-image: linear-gradient(to top, silver, #DCDCDC, white);
-    overflow: hidden;
 }
 
 body{
@@ -23,7 +22,6 @@ body{
     height: 100vh;
     background-image: url("images/ship.jpg");
     background-size: cover;
-    overflow: hidden;
     box-shadow: black 1px 1px 10px;
 }
 
@@ -394,11 +392,11 @@ button{
     #midSection{ flex-flow: column wrap; }
     #logo{width: 30%; position: absolute; top: 1px;}
     #lowerPart{justify-content: space-between; width: 90%; position: absolute; top: 80%;}
-    #searchType{flex-flow: row wrap; position: absolute; top: 20%; font-size: 40px}
+    #searchType{flex-flow: row wrap; position: absolute; top: 15%; font-size: 40px}
     input[type=radio]{width: 50px; height: 50px}
     #upperPart{justify-content: center}
     #displaycolors{ visibility: hidden; }
-    #intro{ visibility: hidden; }
+    #intro{ display: none; }
     #displayFilters{ visibility: hidden; }
     .color{ height: 17%; border-radius: 0px; text-align: center; font-size: 2vh}
     body{ background-image: url("images/mobilebackground.jpg"); }
@@ -416,7 +414,7 @@ button{
         width: 100%;
         height: 40%;
         position: absolute;
-        bottom: -2%;
+        bottom: -6%;
         flex-flow: column wrap;
         visibility: visible;
         background: transparent;
