@@ -321,7 +321,6 @@ function addSearchMarker(i, latitude, longitude) {
 // Clear all layers from the map
 
 function clearMap() {
-    console.log("Clearing layers..");
     ships.clearLayers();
     markers.eachLayer((layer) => {
         layer.remove();

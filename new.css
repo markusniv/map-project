@@ -390,16 +390,21 @@ button{
 
 /* ==== settings for mobile screens ==== */
 @media (max-width: 1050px) {
-    #upperSection{ flex-flow: column wrap; height: 20%; top: 0vh}
+    #upperSection{ flex-flow: column wrap; height: 25%; top: 0vh}
     #midSection{ flex-flow: column wrap; }
-    #logo{width: 30%; position: absolute; top: 1px; }
+    #logo{width: 30%; position: absolute; top: 1px;}
+    #lowerPart{justify-content: space-between; width: 90%; position: absolute; top: 80%;}
+    #searchType{flex-flow: row wrap; position: absolute; top: 20%; font-size: 40px}
+    input[type=radio]{width: 50px; height: 50px}
     #upperPart{justify-content: center}
     #displaycolors{ visibility: hidden; }
     #intro{ visibility: hidden; }
     #displayFilters{ visibility: hidden; }
     .color{ height: 17%; border-radius: 0px; text-align: center; font-size: 2vh}
     body{ background-image: url("images/mobilebackground.jpg"); }
-    #searchBar{width: 40%}
+    #searchSection{width: 100%; height: 25%; position: absolute; top: 40%}
+    #searchBar{width: 70%; font-size: 30px}
+    #search{width: 20%; background: gray}
     #mapid{
         height: 30vh;
         width: 75vw;
