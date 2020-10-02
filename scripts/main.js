@@ -417,12 +417,11 @@ function displayColors(){
 function hideMain(){
     let main = document.getElementById("midSection");
     let button = document.getElementById("hideMap");
-    if (main.style.zIndex == 0) {
+    if (main.style.zIndex == 9) {
         main.style.zIndex = -6;
         button.innerHTML = "Show map";
     } else {
-        main.style.zIndex = 0;
-        main.style.opacity = 1;
+        main.style.zIndex = 9;
         button.innerHTML = "Hide map";
     }
 }
