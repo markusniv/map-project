@@ -197,7 +197,7 @@ button{
     height: 80%;
     width: 10vw;
     position: relative;
-    left: 9vw;
+    left: 9.5vw;
     transition-property: left;
     transition-duration: 0.8s;
 
@@ -377,11 +377,10 @@ button{
     .button, #darkMode{width: 10vw}
     #mapid{ margin-top: 5vh; height: 70vh; }
     #colors{ margin-top: 4vh; }
-    #displaycolors{ left: 7%; }
     #introText{ font-size: 2vw; }
     #continue{ font-size: 1vw; }
     #filters{ width: 16%; }
-    #displayFilters{ left: 13%; width: 5vw; }
+    #displayFilters{ left: 13%; width: 5vw;  height: 4.5vw;}
 }
 /* ==== settings for a laptop-sized screen ==== */
 
@@ -395,7 +394,6 @@ button{
     #searchType{flex-flow: row wrap; position: absolute; top: 15%; font-size: 40px}
     input[type=radio]{width: 50px; height: 50px}
     #upperPart{justify-content: center}
-    #displaycolors{ visibility: hidden; }
     #intro{ display: none; }
     #displayFilters{ visibility: hidden; }
     .color{ height: 17%; border-radius: 0px; text-align: center; font-size: 2vh}

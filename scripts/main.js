@@ -393,21 +393,23 @@ function intro(){
 
 // Displays the color code buttons by sliding them to the left
 
+function delay(){
+    document.getElementById("colors").classList.replace('visible', 'hidden');
+}
+
 function displayColors(){
     let filters = document.getElementById('filters');
     let colors = document.getElementById('colors');
     let arrow = document.getElementById('arrow');
     if(colors.className === 'hidden') {
         filtersPushed = true;
-        filters.style.left = '0vw';
-        colors.classList.remove('hidden');
-        colors.classList.add('visible');
+        filters.style.left = '1vw';
+        colors.classList.replace('hidden', 'visible');
         arrow.style.webkitTransform = 'rotate(180deg)';
     } else {
         filtersPushed = false;
-        filters.style.left = '9vw';
-        colors.classList.remove('visible');
-        colors.classList.add('hidden');
+        filters.style.left = '9.5vw';
+        setTimeout(delay, 1000);
         arrow.style.webkitTransform = 'rotate(0deg)';
     }
 }
