@@ -210,7 +210,7 @@ button{
     flex-flow: column nowrap;
     background-image: linear-gradient(to left, #DCDCDC, #F5F5F5);
     border: black solid 2px;
-    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
     width: 3vw;
     margin: 0px;
     border-radius: 8px 8px 0 0;
@@ -400,7 +400,7 @@ button{
     #displayFilters{ visibility: hidden; }
     .color{ height: 17%; border-radius: 0px; text-align: center; font-size: 2vh}
     body{ background-image: url("images/mobilebackground.jpg"); }
-    #searchSection{width: 100%; height: 25%; position: absolute; top: 40%}
+    #searchSection{width: 100%; height: 25%; position: absolute; top: 40%; left: 0%}
     #searchBar{width: 70%; font-size: 30px}
     #search{width: 20%; background: gray}
     #mapid{
