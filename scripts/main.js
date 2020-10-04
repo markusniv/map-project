@@ -393,10 +393,6 @@ function intro(){
 
 // Displays the color code buttons by sliding them to the left
 
-function delay(){
-    document.getElementById("colors").classList.replace('visible', 'hidden');
-}
-
 function displayColors(){
     let filters = document.getElementById('filters');
     let colors = document.getElementById('colors');
@@ -409,7 +405,7 @@ function displayColors(){
     } else {
         filtersPushed = false;
         filters.style.left = '9.5vw';
-        setTimeout(delay, 1000);
+        colors.classList.replace('visible', 'hidden');
         arrow.style.webkitTransform = 'rotate(0deg)';
     }
 }
