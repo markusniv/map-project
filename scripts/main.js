@@ -102,8 +102,8 @@ function storeLocationData() {
 // Reload the locations from the API
 
 function resetLocationData() {
+    clearMap();
     storeLocationData();
-    showAll();
 }
 
 // Get weather data from the area where a ship currently resides from OpenWeatherMap
