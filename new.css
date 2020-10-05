@@ -20,7 +20,6 @@ body{
     max-width: 2000px;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/ship.jpg");
     background-size: cover;
     box-shadow: black 1px 1px 10px;
 }
@@ -174,6 +173,29 @@ button{
     z-index: 9;
 }
 
+#image{
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 1.5s;
+    position: absolute;
+    bottom: 0px;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    max-width: 2000px;
+}
+
+#darkImage{
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1.5s;
+    position: absolute;
+    bottom: 0px;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    max-width: 2000px;
+}
 /* map settings */
 #mapid {
     height: 70vh;
@@ -395,6 +417,8 @@ button{
     input[type=radio]{width: 50px; height: 50px}
     #upperPart{justify-content: center}
     #intro{ display: none; }
+    #image{display: none;}
+    #darkImage{display: none;}
     #displayFilters{ visibility: hidden; }
     .color{ height: 17%; border-radius: 0px; text-align: center; font-size: 2vh}
     body{ background-image: url("images/mobilebackground.jpg"); }

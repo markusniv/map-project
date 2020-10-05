@@ -358,6 +358,8 @@ function changeMode() {
         uppersection.style.backgroundColor = '#181818';
         uppersection.style.color = 'white';
         uppersection.style.boxShadow = 'white 1px 1px 30px';
+        document.getElementById("darkImage").style.opacity = 1;
+        document.getElementById("image").style.opacity = 0;
         document.getElementById('showAll').style.color = 'white';
         document.getElementById('lowerPart').style.color = 'white';
         document.getElementById('clearMap').style.color = 'white';
@@ -371,6 +373,8 @@ function changeMode() {
         uppersection.style.backgroundColor = 'white';
         darkmode.style.color = "black";
         uppersection.style.boxShadow = 'black 2px 2px 60px';
+        document.getElementById("darkImage").style.opacity = 0;
+        document.getElementById("image").style.opacity = 1;
         document.getElementById('showAll').style.color = 'black';
         document.getElementById('lowerPart').style.color = 'black';
         document.getElementById('clearMap').style.color = 'black';
