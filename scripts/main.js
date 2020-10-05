@@ -367,6 +367,7 @@ function changeMode() {
         document.getElementById("searchType").style.color = "white";
         document.getElementById("hideMap").style.color = "white";
         document.getElementById('resetLocation').style.color = 'white';
+        document.querySelector('body').style.filter = 'brightness(50%)';
     } else {
         darkmode.classList.replace("enabled", "disabled");
         darkmode.innerHTML = "Dark mode";
@@ -383,6 +384,7 @@ function changeMode() {
         document.getElementById("logo").src = 'images/logo.png';
         document.querySelector("html").style.backgroundImage = "linear-gradient(to top, silver, #DCDCDC, white)";
         document.getElementById('resetLocation').style.color = 'black';
+        document.querySelector('body').style.filter = 'brightness(100%)';
     }
 }
 

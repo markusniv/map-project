@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Fixed 'other' shiptypes not showing.">
+    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Fixed old comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,18 @@
       <workItem from="1601287632788" duration="146000" />
       <workItem from="1601288077250" duration="125000" />
       <workItem from="1601452332569" duration="1911000" />
-      <workItem from="1601459852565" duration="353000" />
+      <workItem from="1601459852565" duration="896000" />
+      <workItem from="1601549039436" duration="597000" />
+      <workItem from="1601573777100" duration="86000" />
+      <workItem from="1601634112809" duration="3842000" />
+      <workItem from="1601639338782" duration="1232000" />
+      <workItem from="1601641370247" duration="1608000" />
+      <workItem from="1601648251428" duration="180000" />
+      <workItem from="1601660003635" duration="597000" />
+      <workItem from="1601802315412" duration="61000" />
+      <workItem from="1601803464242" duration="1818000" />
+      <workItem from="1601844928689" duration="6000" />
+      <workItem from="1601884750945" duration="7509000" />
     </task>
     <task id="LOCAL−00001" summary="Added coordinates on the ship popup">
       <created>1600767328715</created>
@@ -218,7 +230,49 @@
       <option name="presentableId" value="LOCAL−00021" />
       <updated>1601285681997</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL−00022" summary="Fixed searched ships not clearing from map when filtering">
+      <created>1601460539433</created>
+      <option name="number" value="LOCAL−00022" />
+      <option name="presentableId" value="LOCAL−00022" />
+      <updated>1601460539433</updated>
+    </task>
+    <task id="LOCAL−00023" summary="Added window resize event listener to fix position of filter buttons when resizing">
+      <created>1601635971673</created>
+      <option name="number" value="LOCAL−00023" />
+      <option name="presentableId" value="LOCAL−00023" />
+      <updated>1601635971673</updated>
+    </task>
+    <task id="LOCAL−00024" summary="Restructured code">
+      <created>1601636062170</created>
+      <option name="number" value="LOCAL−00024" />
+      <option name="presentableId" value="LOCAL−00024" />
+      <updated>1601636062170</updated>
+    </task>
+    <task id="LOCAL−00025" summary="Added boolean filtersPushed to determine whether or not color code filter box should be visible or not when resizing window.">
+      <created>1601636485746</created>
+      <option name="number" value="LOCAL−00025" />
+      <option name="presentableId" value="LOCAL−00025" />
+      <updated>1601636485746</updated>
+    </task>
+    <task id="LOCAL−00026" summary="Fixed position of color code buttons, fixed hide map not working on first click.">
+      <created>1601637187683</created>
+      <option name="number" value="LOCAL−00026" />
+      <option name="presentableId" value="LOCAL−00026" />
+      <updated>1601637187683</updated>
+    </task>
+    <task id="LOCAL−00027" summary="Edited reload locations button to clear map and then store location data">
+      <created>1601892235080</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1601892235080</updated>
+    </task>
+    <task id="LOCAL−00028" summary="Fixed old comments">
+      <created>1601898428380</created>
+      <option name="number" value="LOCAL−00028" />
+      <option name="presentableId" value="LOCAL−00028" />
+      <updated>1601898428380</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +308,14 @@
     <MESSAGE value="Changed leaflet popups into paragraphs and added styling, added use of OpenWeatherMap icons into the weather popups" />
     <MESSAGE value="Added duplicate code in the search function into its own function, addSearchMarker" />
     <MESSAGE value="Fixed 'other' shiptypes not showing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed 'other' shiptypes not showing." />
+    <MESSAGE value="Fixed searched ships not clearing from map when filtering" />
+    <MESSAGE value="Added window resize event listener to fix position of filter buttons when resizing" />
+    <MESSAGE value="Restructured code" />
+    <MESSAGE value="Added boolean filtersPushed to determine whether or not color code filter box should be visible or not when resizing window." />
+    <MESSAGE value="Fixed position of color code buttons, fixed hide map not working on first click." />
+    <MESSAGE value="Edited reload locations button to clear map and then store location data" />
+    <MESSAGE value="Fixed old comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed old comments" />
   </component>
   <component name="WindowStateProjectService">
     <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600776013333">
@@ -279,11 +340,15 @@
     </state>
     <state x="369" y="115" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601454354157" />
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600932253572" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1601285861419">
+    <state x="560" y="434" key="VCS.EditChangelistDialog" timestamp="1601637150404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600768910333" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601285861419" />
+    <state x="560" y="434" key="VCS.EditChangelistDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601637150404" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1601898436120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601460553334" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601898436120" />
     <state x="2371" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600950113437" />
     <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1600939459124">
       <screen x="0" y="0" width="1920" height="1040" />
