@@ -424,7 +424,7 @@ function hideMain(){
     let button = document.getElementById("hideMap");
     if (mapVisible) {
         mapVisible = false;
-        main.style.zIndex = -6;
+        document.getElementById("mapid").style.display = "none";
         document.getElementById("filters").style.display = "none";
         button.innerHTML = "Show map";
     } else {
@@ -432,6 +432,7 @@ function hideMain(){
         main.style.zIndex = 9;
         button.innerHTML = "Hide map";
         document.getElementById("filters").style.display = "flex";
+        document.getElementById("mapid").style.display = "block";
     }
 }
 
