@@ -15,9 +15,10 @@ let mymap = L.map('mapid').setView([61.924110, 25.748152], 5);
 let showAllShips = true;
 
 // Creating the Leaflet map using the Mapbox API and focusing it on Finland
-//This is a comment
+
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                 '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
@@ -135,7 +136,8 @@ function printWeatherData(json, latlng) {
     console.log("Wind speed: " + json.wind.speed + "m/s");
 }
 
-// Use the ship metadataInformation and locationInformation collected from the APIs to draw circles representing the ships on the map
+// Use the ship metadataInformation and locationInformation collected from the APIs to store information on where the
+// circles need to be drawn at
 
 function catchMetadata() {
 
@@ -145,7 +147,7 @@ function catchMetadata() {
         const shipNameString = metadataInformation[i].name;
         const shipMMSI = getShips(metadataInformation[i].mmsi, shipNameString);
 
-        if (shipMMSI == undefined) {
+        if (shipMMSI === undefined) {
             continue;
         }
         const shipType = metadataInformation[i].shipType;
@@ -220,7 +222,8 @@ function catchMetadata() {
                                 <br>Ship destination: <a href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${destination}/search_type:2">${destination}</a>
                                 <br>Ship type: ${shipTypeString}
                                 <br>Ship coordinates: ${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude}
-                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, ${locationInformation[shipMMSI].longitude})">Click here</button>                         
+                                <br>Weather information: <button onclick="getWeatherData(${locationInformation[shipMMSI].latitude}, 
+                                ${locationInformation[shipMMSI].longitude})">Click here</button>                         
                                 </p>`
 
         });
