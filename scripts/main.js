@@ -368,6 +368,7 @@ function changeMode() {
     } else {
         darkmode.classList.replace("enabled", "disabled");
         darkmode.innerHTML = "Dark mode";
+        uppersection.style.color = 'black';
         uppersection.style.backgroundColor = 'white';
         uppersection.style.boxShadow = 'black 2px 2px 60px';
         document.getElementById("darkImage").style.opacity = 0;
