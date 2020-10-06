@@ -353,7 +353,6 @@ function changeMode() {
     if (darkmode.classList.contains("disabled")) {
         darkmode.classList.replace("disabled", "enabled");
         darkmode.innerHTML = "Light mode";
-        darkmode.style.color = "white";
         document.querySelector("html").style.backgroundImage = "linear-gradient(to top, #303030, #505050, #696969)";
         uppersection.style.backgroundColor = '#181818';
         uppersection.style.color = 'white';
@@ -370,7 +369,6 @@ function changeMode() {
         darkmode.classList.replace("enabled", "disabled");
         darkmode.innerHTML = "Dark mode";
         uppersection.style.backgroundColor = 'white';
-        darkmode.style.color = "black";
         uppersection.style.boxShadow = 'black 2px 2px 60px';
         document.getElementById("darkImage").style.opacity = 0;
         document.getElementById("image").style.opacity = 1;
