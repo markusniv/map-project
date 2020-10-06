@@ -350,6 +350,7 @@ function showOther(color) {
 function changeMode() {
     let darkmode = document.getElementById('darkMode');
     let uppersection = document.getElementById('upperSection');
+    const buttons = document.getElementsByClassName('button');
     if (darkmode.classList.contains("disabled")) {
         darkmode.classList.replace("disabled", "enabled");
         darkmode.innerHTML = "Light mode";
@@ -361,7 +362,6 @@ function changeMode() {
         document.getElementById("image").style.opacity = 0;
         document.querySelector('body').style.filter = 'brightness(50%)';
         document.querySelector('#logo').src =  './images/whitelogo.png';
-        const buttons = document.getElementsByClassName('button');
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].style.color = 'white';
         }
@@ -377,7 +377,6 @@ function changeMode() {
         document.getElementById('resetLocation').style.color = 'black';
         document.querySelector('body').style.filter = 'brightness(100%)';
         document.querySelector('#logo').src =  './images/logo.png';
-        const buttons = document.getElementsByClassName('button');
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].style.color = 'black';
         }
