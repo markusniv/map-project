@@ -126,7 +126,7 @@ function getWeatherData(lat, lon) {
 function printWeatherData(json, latlng) {
     let popup = L.popup()
         .setLatLng(latlng)
-        .setContent(`<p class="popupTextBox"><img src="${weatherIcon}${json.weather[0].icon}.png"><br>
+        .setContent(`<p class="popupTextBox"><img src="${weatherIcon}${json.weather[0].icon}.png" alt="${json.weather[0].main} image"><br>
                  <br>General weather: ${json.weather[0].main}
                  <br>Temperature: ${(+json.main.temp - 273.15).toFixed(1)} 'C
                  <br>Wind speed: ${json.wind.speed} m/s</p>`)
