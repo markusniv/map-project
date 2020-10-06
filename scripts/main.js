@@ -360,14 +360,12 @@ function changeMode() {
         uppersection.style.boxShadow = 'white 1px 1px 30px';
         document.getElementById("darkImage").style.opacity = 1;
         document.getElementById("image").style.opacity = 0;
-        document.getElementById('showAll').style.color = 'white';
-        document.getElementById('lowerPart').style.color = 'white';
-        document.getElementById('clearMap').style.color = 'white';
-        document.getElementById('logo').src = 'images/whitelogo.png';
-        document.getElementById("searchType").style.color = "white";
-        document.getElementById("hideMap").style.color = "white";
-        document.getElementById('resetLocation').style.color = 'white';
         document.querySelector('body').style.filter = 'brightness(50%)';
+        document.querySelector('#logo').src =  './images/whitelogo.png';
+        const buttons = document.getElementsByClassName('button');
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].style.color = 'white';
+        }
     } else {
         darkmode.classList.replace("enabled", "disabled");
         darkmode.innerHTML = "Dark mode";
@@ -376,15 +374,14 @@ function changeMode() {
         uppersection.style.boxShadow = 'black 2px 2px 60px';
         document.getElementById("darkImage").style.opacity = 0;
         document.getElementById("image").style.opacity = 1;
-        document.getElementById('showAll').style.color = 'black';
-        document.getElementById('lowerPart').style.color = 'black';
-        document.getElementById('clearMap').style.color = 'black';
-        document.getElementById("searchType").style.color = "black";
-        document.getElementById("hideMap").style.color = "black";
-        document.getElementById("logo").src = 'images/logo.png';
         document.querySelector("html").style.backgroundImage = "linear-gradient(to top, silver, #DCDCDC, white)";
         document.getElementById('resetLocation').style.color = 'black';
         document.querySelector('body').style.filter = 'brightness(100%)';
+        document.querySelector('#logo').src =  './images/logo.png';
+        const buttons = document.getElementsByClassName('button');
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].style.color = 'black';
+        }
     }
 }
 
