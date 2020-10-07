@@ -128,9 +128,6 @@ function printWeatherData(json, latlng) {
                  <br>Temperature: ${(+json.main.temp - 273.15).toFixed(1)} 'C
                  <br>Wind speed: ${json.wind.speed} m/s</p>`)
         .openOn(mymap);
-    console.log("General weather: " + json.weather[0].main);
-    console.log("Temperature: " + (+json.main.temp - 273.15).toFixed(1) + ` 'C`);
-    console.log("Wind speed: " + json.wind.speed + "m/s");
 }
 
 // Use the ship metadataInformation and locationInformation collected from the APIs to store information on where the
@@ -266,15 +263,15 @@ function getShips(mmsi, shipName) {
     }
 }
 
-// Search for ship via either the mmsi or ship name
+// Search for ship via either the mmsi or ship name. Search results are pushed into an array which is then checked in
+// the addSearchMarker function where the results are drawn on the map.
 
 function searchForShip(markers, searchBar) {
-    // Clearing the markers before new search
-    markers.eachLayer((layer) => {
-        layer.remove();
-    })
+    // Clearing map before search
+    clearMap();
+    let searchResults = [];
     const search = searchBar.value;
-
+    let count = 0;
     // Looking through the information array to see if there's a ship with the correct mmsi or name
     for (let i = 0; i < locationInformation.length; i++) {
         // If the object for some reason has no name, skip the current object
@@ -286,37 +283,65 @@ function searchForShip(markers, searchBar) {
             // If mmsi checkbox is checked, search by the mmsi
             if (document.getElementById('mmsi').checked) {
                 if (locationInformation[i].mmsi === search) {
-                    addSearchMarker(i, locationInformation[i].latitude, locationInformation[i].longitude);
+                    count++;
+                    searchResults.push(`'i':${i}
+                                        'latitude':${locationInformation[i].latitude}
+                                        'longitude':${locationInformation[i].longitude}`);
                 }
             }
             // If ship name checkbox is checked, search by the mmsi
             if (document.getElementById('shipName').checked) {
                 if (locationInformation[i]['name'].toLowerCase().includes(search.toLowerCase())) {
-                    addSearchMarker(i, locationInformation[i].latitude, locationInformation[i].longitude);
+                    count++;
+                    searchResults.push({
+                        'number': i,
+                        'latitude': locationInformation[i].latitude,
+                        'longitude': locationInformation[i].longitude
+                    });
                 }
             }
         }
-
-    }
-    // Finally, add markers to map
-    markers.addTo(mymap);
-}
-
-function addSearchMarker(i, latitude, longitude) {
-    marker = L.marker([latitude, longitude]);
-    markers.addLayer(marker);
-    for (let p = 0; p < circleInformation.length; p++) {
-        if (circleInformation[p].shipMMSI === locationInformation[i].mmsi) {
-            let circle = L.circle([latitude, longitude], {
-                color: circleInformation[p].color,
-                radius: 5,
-            }).addTo(markers);
-            circle.bindPopup(circleInformation[p].popUp);
-            marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
+        if (count > 20) {
+            break;
         }
     }
+    // Finally, add markers to map if there are under 20 results
+    if (count > 20) {
+        alert("Too many results, please refine your search input!");
+    } else if (count === 0) {
+        alert("No results!");
+    } else {
+        addSearchMarker(searchResults, count);
+    }
 }
 
+// Draw search result circle and marker. If there is one search result, draw marker and open popup. If five or less,
+// only draw the popups but not open them. If there are more than that, only draw the circles.
+
+function addSearchMarker(searchResults, count) {
+    for (let i = 0; i < searchResults.length; i++) {
+        const number = searchResults[i].number;
+        const latitude = searchResults[i].latitude;
+        const longitude = searchResults[i].longitude;
+        marker = L.marker([latitude, longitude]);
+        markers.addLayer(marker);
+        for (let p = 0; p < circleInformation.length; p++) {
+            if (circleInformation[p].shipMMSI === locationInformation[number].mmsi) {
+                let circle = L.circle([latitude, longitude], {
+                    color: circleInformation[p].color,
+                    radius: 5,
+                }).addTo(ships);
+                circle.bindPopup(circleInformation[p].popUp);
+                if (count === 1) {
+                    marker.bindPopup(circleInformation[p].popUp).addTo(mymap).openPopup();
+                } else if (count <= 5) {
+                    marker.bindPopup(circleInformation[p].popUp).addTo(mymap);
+                }
+            }
+        }
+    }
+    ships.addTo(mymap);
+}
 
 // Clear all layers from the map
 
@@ -429,6 +454,8 @@ function hideMain(){
         document.getElementById("mapid").style.display = "block";
     }
 }
+
+// react to resizing window
 
 window.addEventListener('resize', e => {
     let w = document.documentElement.clientWidth;

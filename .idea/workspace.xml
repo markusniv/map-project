@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Cleaned dark mode a bit more">
+    <list default="true" id="f4bd2059-5b04-481e-ab29-a2c44a6c4c8f" name="Default Changelist" comment="Fixed radio button text colors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.js" afterDir="false" />
     </list>
@@ -106,7 +106,10 @@
       <workItem from="1601929413909" duration="1000" />
       <workItem from="1601991432608" duration="1576000" />
       <workItem from="1601997923406" duration="25000" />
-      <workItem from="1601998143267" duration="58000" />
+      <workItem from="1601998143267" duration="142000" />
+      <workItem from="1601998532297" duration="697000" />
+      <workItem from="1602060484803" duration="662000" />
+      <workItem from="1602062005157" duration="7138000" />
     </task>
     <task id="LOCAL−00001" summary="Added coordinates on the ship popup">
       <created>1600767328715</created>
@@ -306,7 +309,13 @@
       <option name="presentableId" value="LOCAL−00033" />
       <updated>1601992989639</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL−00034" summary="Fixed radio button text colors">
+      <created>1601998272621</created>
+      <option name="number" value="LOCAL−00034" />
+      <option name="presentableId" value="LOCAL−00034" />
+      <updated>1601998272621</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +334,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed CSS image location" />
     <MESSAGE value="Fixed commenting" />
     <MESSAGE value="Added OneWeatherMap API to show general weather information at the ship locations. Also added a popup to show up when searching for ships." />
     <MESSAGE value="Hid API keys" />
@@ -350,7 +358,8 @@
     <MESSAGE value="Cleaned up dark mode code a bit, fixed dark mode logo" />
     <MESSAGE value="Added alt attribute for weather icons" />
     <MESSAGE value="Cleaned dark mode a bit more" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned dark mode a bit more" />
+    <MESSAGE value="Fixed radio button text colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed radio button text colors" />
   </component>
   <component name="WindowStateProjectService">
     <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600776013333">
@@ -379,11 +388,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="560" y="434" key="VCS.EditChangelistDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601637150404" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1601992990723">
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1601998277120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601460553334" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601992990723" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601998277120" />
     <state x="2371" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600950113437" />
     <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1600939459124">
       <screen x="0" y="0" width="1920" height="1040" />
