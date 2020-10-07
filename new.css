@@ -413,7 +413,7 @@ button{
     #midSection{ flex-flow: column wrap; }
     #logo{width: 30%; position: absolute; top: 1px;}
     #lowerPart{justify-content: space-between; width: 90%; position: absolute; top: 80%;}
-    #searchType{flex-flow: row wrap; position: absolute; top: 15%; font-size: 5vw}
+    #searchType{flex-flow: row wrap; position: absolute; top: 15%; font-size: 4vw}
     input[type=radio]{width: 5vw; height: 5vw}
     #upperPart{justify-content: center}
     #intro{ display: none; }
