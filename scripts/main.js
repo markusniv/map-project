@@ -232,7 +232,8 @@ function drawShips(color) {
         for (let i = 0; i < circleInformation.length; i++) {
             let circle = L.circle([circleInformation[i].latitude, circleInformation[i].longitude], {
                 color: circleInformation[i].color,
-                radius: 5,
+                opacity: 1.0,
+                weight: 5
             }).addTo(ships);
             circle.bindPopup(circleInformation[i].popUp);
         }
@@ -241,7 +242,8 @@ function drawShips(color) {
             if (circleInformation[i].color === color) {
                 let circle = L.circle([circleInformation[i].latitude, circleInformation[i].longitude], {
                     color: circleInformation[i].color,
-                    radius: 5,
+                    opacity: 1.0,
+                    weight: 7
                 }).addTo(ships);
                 circle.bindPopup(circleInformation[i].popUp);
             }
@@ -329,7 +331,8 @@ function addSearchMarker(searchResults, count) {
             if (circleInformation[p].shipMMSI === locationInformation[number].mmsi) {
                 let circle = L.circle([latitude, longitude], {
                     color: circleInformation[p].color,
-                    radius: 5,
+                    opacity: 1.0,
+                    weight: 10
                 }).addTo(ships);
                 circle.bindPopup(circleInformation[p].popUp);
                 if (count === 1) {
